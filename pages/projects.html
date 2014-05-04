@@ -1,0 +1,6 @@
+<a href="/#/" class="projects__back">Back to homepage</a>
+
+<p class="projects">
+    <a href="{{ project.url }}" target="_blank" ng-repeat-start="project in projects" class="project">{{ project.name }}</a>
+    <span class="highlight" ng-repeat-end>/ </span>
+</p>

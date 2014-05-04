@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html ng-app="siteApp">
 
     <head>
         <meta charset="utf-8">
@@ -12,22 +11,21 @@
 
         <link rel="stylesheet" href="static/css/normalize.css">
         <link rel="stylesheet" href="static/css/screen.css">
+
+        <base href="/">
     </head>
-    <body>
+    <body ng-controller="indexController">
         <div class="container">
-            <div class="top">
-                <p>Software programmer <span class="highlight">&amp;&amp;</span></p>
-                <p>Problem solver <span class="highlight">&amp;&amp;</span></p>
-                <p>Joke maker <span class="highlight">&amp;&amp;</span></p>
-                <p>Data lover<span class="highlight">.</span></p>
-            </div>
+            <div class="top {{ pageClass }}" ng-view></div>
 
             <div class="bottom">
-                <p>Daniel Samuels</p>
+                <p><a href="/#/">Daniel Samuels</a></p>
                 <p>
                     <a href="http://github.com/danielsamuels" target="_blank">Github</a>
                     <span class="highlight">/</span>
                     <a href="http://twitter.com/danielsamuels" target="_blank">Twitter</a>
+                    <span class="highlight">/</span>
+                    <a href="/#/projects/">Projects</a>
                     <span class="highlight">/</span>
                     <!--
                     Soon™
@@ -36,8 +34,12 @@
                     -->
                 </p>
             </div>
+
         </div>
 
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.2.16/angular-route.js"></script>
+        <script src="//code.angularjs.org/1.2.16/angular-animate.js"></script>
+        <script src="static/js/app.js"></script>
     </body>
 </html>
