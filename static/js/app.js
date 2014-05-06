@@ -25,11 +25,4 @@ siteApp.controller('projectsController', function($scope, $http) {
     $http.get('projects.json').then(function(response){
         $scope.projects = response.data;
     });
-
-    $scope.addItem  = function() {
-        $scope.projects.push({
-            name: +new Date(),
-            url: 'http://google.com'
-        });
-    }
 });
