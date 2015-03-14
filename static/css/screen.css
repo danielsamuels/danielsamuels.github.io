@@ -236,6 +236,10 @@ p {
 .top.index.ng-leave-active p:nth-child(4) {
   -webkit-animation: fadeOutRight 150ms 120ms ease-out forwards;
 }
+/* line 167, ../scss/screen.scss */
+.top.index.ng-leave-active p:nth-child(5) {
+  -webkit-animation: fadeOutRight 150ms 160ms ease-out forwards;
+}
 /* line 174, ../scss/screen.scss */
 .top.projects.ng-enter {
   -webkit-transition: opacity 350ms linear 270ms;

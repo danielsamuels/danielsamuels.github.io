@@ -163,7 +163,7 @@ p {
 
     &.index.ng-leave-active p {
         $delay: 40;
-        @for $i from 1 through 4 {
+        @for $i from 1 through 5 {
             &:nth-child(#{$i}) {
                 -webkit-animation: fadeOutRight 150ms #{$i * $delay - $delay}ms ease-out forwards;
             }
