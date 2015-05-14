@@ -1,200 +1,103 @@
-$rem-base: 16;
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
 
-// STRIP UNIT
-// It strips the unit of measure and returns it
-@function strip-unit($num) {
-    @return $num / ($num * 0 + 1);
-}
-
-// CONVERT TO REM
-@function convert-to-rem($value, $base-value: $rem-base)  {
-    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
-    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
-    @return $value;
-}
-
-@function rem-calc($values, $base-value: $rem-base) {
-    $max: length($values);
-
-    @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
-
-    $remValues: ();
-    @for $i from 1 through $max {
-        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
-    }
-
-    @return $remValues;
-}
+$flat-blue: #3498db;
+$text-color: #000;
 
 *, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-html, body, .container {
-    min-height: 100%;
+html, body {
     height: 100%;
     width: 100%;
-    color: #fff;
-}
-
-html {
-    -ms-text-size-adjust: 100%;
-    /* 4 */
-    -webkit-text-size-adjust: 100%;
-    /* 4 */
-}
-
-html, body {
-    // Mobile
-    font-size: 28%;
-
-    @for $i from 1 through 14 {
-        @media screen and (min-width: #{$i * 100}px) {
-            font-size: #{(($i * 100) / 14 / 100) * 100%};
-        }
-    }
 }
 
 body {
-    padding: rem-calc(30);
-    font-family: "Helvetica", sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+
+    time + & {
+        margin-top: -10px;
+    }
+}
+
+time {
+    font-size: 14px;
 }
 
 a {
-    color: #fff;
+    color: $text-color;
+    border-bottom: 1px dashed $text-color;
     text-decoration: none;
+    padding-bottom: 2px;
+    transition: border-bottom-color 0.25s;
 
-    &:hover {
-        color: #accfcc;
-    }
-
-    &.project {
-        line-height: 1.2;
-    }
-
-    &.projects__back {
-        font-size: rem-calc(18);
-        display: inline-block;
-        margin-bottom: 10px;
+    &:hover, &:active {
+        border-bottom-color: $flat-blue;
     }
 }
 
-p {
-    color: #fff;
-    margin: 0;
-    font-weight: bold;
-    line-height: 1;
+header {
+    $font-color: $text-color;
 
-    .top & {
-        font-size: rem-calc(95);
-        margin-left: rem-calc(-4);
-    }
+    position: fixed;
+    width: 100%;
+    top: 0;
 
-    .top &.projects {
-        font-size: rem-calc(50);
-    }
+    font-weight: 600;
 
-    .bottom & {
-        font-size: rem-calc(40);
-    }
-}
+    padding: 30px;
+    background: rgba(#fff, 0.925);
+    border-bottom: 1px solid rgba($flat-blue, 0.3);
+    font-size: 16px;
 
-.container {
-    position: relative;
-    background: #171511;
-    padding: rem-calc(20) rem-calc(30);
-    min-height: rem-calc(600);
-}
+    color: $font-color;
 
-.highlight {
-    color: #8a0917;
-}
+    div {
+        float: left;
+        line-height: 1;
 
-// Angular transitions
-@-webkit-keyframes fadeOutRight {
-    0% {
-        -webkit-transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateX(rem-calc(20));
-        opacity: 0;
-    }
-}
+        a {
+            display: inline-block;
+            width: 100%;
+            border: none;
+        }
 
-@keyframes fadeOutRight {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(rem-calc(20));
-        opacity: 0;
-    }
-}
-
-.top {
-    position: absolute;
-    width: calc(100% - #{rem-calc(60)});
-    top: rem-calc(20);
-    left: rem-calc(30);
-
-    // Index
-    &.index.ng-enter {
-        -webkit-transition: opacity 350ms linear 270ms;
-        transition: opacity 350ms linear 270ms;
-
-        opacity: 0;
-    }
-
-    &.index.ng-enter-active {
-        opacity: 1;
-    }
-
-    &.index.ng-leave {
-        -webkit-transition: all 270ms linear;
-        transition: all 270ms linear;
-    }
-
-    &.index.ng-leave p {
-    }
-
-    &.index.ng-leave-active p {
-        $delay: 40;
-        @for $i from 1 through 5 {
-            &:nth-child(#{$i}) {
-                -webkit-animation: fadeOutRight 150ms #{$i * $delay - $delay}ms ease-out forwards;
-            }
+        small {
+            color: #1a1a1a;
+            font-weight: 300;
         }
     }
 
-    // Projects
-    &.projects.ng-enter {
-        -webkit-transition: opacity 350ms linear 270ms;
-        transition: opacity 350ms linear 270ms;
+    nav {
+        float: right;
 
-        opacity: 0;
+        a {
+            line-height: 32px;
+            border-bottom: 1px dashed #fff;
+        }
     }
 
-    &.projects.ng-enter-active {
-        opacity: 1;
-    }
+    a {
+        color: $font-color;
+        text-decoration: none;
 
-    &.projects.ng-leave {
-        -webkit-transition: opacity 350ms linear;
-        transition: opacity 350ms linear;
-
-        opacity: 1;
-    }
-
-    &.projects.ng-leave-active {
-        opacity: 0;
+        & + a {
+            margin-left: 15px;
+        }
     }
 }
 
-.bottom {
-    position: absolute;
-    bottom: rem-calc(30);
+#content-wrapper {
+    margin: 95px auto 0;
+    padding: 30px 0;
+    width: 80%;
+    max-width: 600px;
+    font-size: 22px;
+    line-height: 1.5;
 }

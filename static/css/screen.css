@@ -1,268 +1,443 @@
-/* line 29, ../scss/screen.scss */
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 35, ../scss/screen.scss */
-html, body, .container {
-  min-height: 100%;
-  height: 100%;
-  width: 100%;
-  color: #fff;
-}
-
-/* line 42, ../scss/screen.scss */
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
 html {
+  font-family: sans-serif;
+  /* 1 */
   -ms-text-size-adjust: 100%;
-  /* 4 */
+  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 4 */
-}
+  /* 2 */ }
 
-/* line 49, ../scss/screen.scss */
-html, body {
-  font-size: 28%;
-}
-@media screen and (min-width: 100px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 7.14286%;
-  }
-}
-@media screen and (min-width: 200px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 14.28571%;
-  }
-}
-@media screen and (min-width: 300px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 21.42857%;
-  }
-}
-@media screen and (min-width: 400px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 28.57143%;
-  }
-}
-@media screen and (min-width: 500px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 35.71429%;
-  }
-}
-@media screen and (min-width: 600px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 42.85714%;
-  }
-}
-@media screen and (min-width: 700px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 50%;
-  }
-}
-@media screen and (min-width: 800px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 57.14286%;
-  }
-}
-@media screen and (min-width: 900px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 64.28571%;
-  }
-}
-@media screen and (min-width: 1000px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 71.42857%;
-  }
-}
-@media screen and (min-width: 1100px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 78.57143%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 85.71429%;
-  }
-}
-@media screen and (min-width: 1300px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 92.85714%;
-  }
-}
-@media screen and (min-width: 1400px) {
-  /* line 49, ../scss/screen.scss */
-  html, body {
-    font-size: 100%;
-  }
-}
-
-/* line 60, ../scss/screen.scss */
+/**
+ * Remove default margin.
+ */
+/* line 19, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
 body {
-  padding: 1.875rem;
-  font-family: "Helvetica", sans-serif;
-}
+  margin: 0; }
 
-/* line 65, ../scss/screen.scss */
-a {
-  color: #fff;
-  text-decoration: none;
-}
-/* line 69, ../scss/screen.scss */
-a:hover {
-  color: #accfcc;
-}
-/* line 73, ../scss/screen.scss */
-a.project {
-  line-height: 1.2;
-}
-/* line 77, ../scss/screen.scss */
-a.projects__back {
-  font-size: 1.125rem;
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 45, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 57, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+audio, canvas, progress, video {
   display: inline-block;
-  margin-bottom: 10px;
-}
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
 
-/* line 84, ../scss/screen.scss */
-p {
-  color: #fff;
-  margin: 0;
-  font-weight: bold;
-  line-height: 1;
-}
-/* line 90, ../scss/screen.scss */
-.top p {
-  font-size: 5.9375rem;
-  margin-left: -0.25rem;
-}
-/* line 95, ../scss/screen.scss */
-.top p.projects {
-  font-size: 3.125rem;
-}
-/* line 99, ../scss/screen.scss */
-.bottom p {
-  font-size: 2.5rem;
-}
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
 
-/* line 104, ../scss/screen.scss */
-.container {
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 78, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 98, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 109, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 126, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 135, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 144, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 153, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
   position: relative;
-  background: #171511;
-  padding: 1.25rem 1.875rem;
-  min-height: 37.5rem;
-}
+  vertical-align: baseline; }
 
-/* line 111, ../scss/screen.scss */
-.highlight {
-  color: #8a0917;
-}
+/* line 169, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+sup {
+  top: -0.5em; }
 
-@-webkit-keyframes fadeOutRight {
-  /* line 117, ../scss/screen.scss */
-  0% {
-    -webkit-transform: translateX(0);
-    opacity: 1;
-  }
+/* line 173, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+sub {
+  bottom: -0.25em; }
 
-  /* line 121, ../scss/screen.scss */
-  100% {
-    -webkit-transform: translateX(1.25rem);
-    opacity: 0;
-  }
-}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 184, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+img {
+  border: 0; }
 
-@keyframes fadeOutRight {
-  /* line 128, ../scss/screen.scss */
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 192, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
 
-  /* line 132, ../scss/screen.scss */
-  100% {
-    transform: translateX(1.25rem);
-    opacity: 0;
-  }
-}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 203, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+figure {
+  margin: 1em 40px; }
 
-/* line 138, ../scss/screen.scss */
-.top {
-  position: absolute;
-  width: calc(100% - 3.75rem);
-  top: 1.25rem;
-  left: 1.875rem;
-}
-/* line 145, ../scss/screen.scss */
-.top.index.ng-enter {
-  -webkit-transition: opacity 350ms linear 270ms;
-  transition: opacity 350ms linear 270ms;
-  opacity: 0;
-}
-/* line 152, ../scss/screen.scss */
-.top.index.ng-enter-active {
-  opacity: 1;
-}
-/* line 156, ../scss/screen.scss */
-.top.index.ng-leave {
-  -webkit-transition: all 270ms linear;
-  transition: all 270ms linear;
-}
-/* line 167, ../scss/screen.scss */
-.top.index.ng-leave-active p:nth-child(1) {
-  -webkit-animation: fadeOutRight 150ms 0ms ease-out forwards;
-}
-/* line 167, ../scss/screen.scss */
-.top.index.ng-leave-active p:nth-child(2) {
-  -webkit-animation: fadeOutRight 150ms 40ms ease-out forwards;
-}
-/* line 167, ../scss/screen.scss */
-.top.index.ng-leave-active p:nth-child(3) {
-  -webkit-animation: fadeOutRight 150ms 80ms ease-out forwards;
-}
-/* line 167, ../scss/screen.scss */
-.top.index.ng-leave-active p:nth-child(4) {
-  -webkit-animation: fadeOutRight 150ms 120ms ease-out forwards;
-}
-/* line 167, ../scss/screen.scss */
-.top.index.ng-leave-active p:nth-child(5) {
-  -webkit-animation: fadeOutRight 150ms 160ms ease-out forwards;
-}
-/* line 174, ../scss/screen.scss */
-.top.projects.ng-enter {
-  -webkit-transition: opacity 350ms linear 270ms;
-  transition: opacity 350ms linear 270ms;
-  opacity: 0;
-}
-/* line 181, ../scss/screen.scss */
-.top.projects.ng-enter-active {
-  opacity: 1;
-}
-/* line 185, ../scss/screen.scss */
-.top.projects.ng-leave {
-  -webkit-transition: opacity 350ms linear;
-  transition: opacity 350ms linear;
-  opacity: 1;
-}
-/* line 192, ../scss/screen.scss */
-.top.projects.ng-leave-active {
-  opacity: 0;
-}
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 211, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0; }
 
-/* line 197, ../scss/screen.scss */
-.bottom {
-  position: absolute;
-  bottom: 1.875rem;
-}
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 232, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 256, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 278, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 293, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 303, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 312, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 335, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 347, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 357, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 371, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 379, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 390, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 399, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 408, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 419, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 425, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/_normalize.scss */
+td, th {
+  padding: 0; }
+
+/* line 7, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* line 11, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+html, body {
+  height: 100%;
+  width: 100%; }
+
+/* line 16, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }
+
+/* line 21, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; }
+  /* line 24, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+  time + h1, time + h2, time + h3, time + h4, time + h5, time + h6 {
+    margin-top: -10px; }
+
+/* line 29, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+time {
+  font-size: 0.875rem; }
+
+/* line 33, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+a {
+  color: #000;
+  border-bottom: 1px dashed #000;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: border-bottom-color 0.25s; }
+  /* line 40, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+  a:hover, a:active {
+    border-bottom-color: #3498db; }
+
+/* line 45, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  font-weight: 600;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.925);
+  border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+  font-size: 1rem;
+  color: #000; }
+  /* line 61, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+  header div {
+    float: left;
+    line-height: 1; }
+    /* line 65, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+    header div a {
+      display: inline-block;
+      width: 100%;
+      border: none; }
+    /* line 71, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+    header div small {
+      color: #1a1a1a;
+      font-weight: 300; }
+  /* line 77, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+  header nav {
+    float: right; }
+    /* line 80, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+    header nav a {
+      line-height: 2rem;
+      border-bottom: 1px dashed #fff; }
+  /* line 86, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+  header a {
+    color: #000;
+    text-decoration: none; }
+    /* line 90, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+    header a + a {
+      margin-left: 15px; }
+
+/* line 96, /Users/danielsamuels/Workspace/other/danielsamuels.github.io/static/scss/screen.scss */
+#content-wrapper {
+  margin: 95px auto 0;
+  padding: 30px 0;
+  width: 80%;
+  max-width: 600px;
+  font-size: 1.375rem;
+  line-height: 1.5; }

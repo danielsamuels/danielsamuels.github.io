@@ -1,0 +1,10 @@
+{% include header.html %}
+
+<div id="content-wrapper">
+
+    {% if page.date %}
+        <time>{{ page.date | date_to_long_string }}</time>
+    {% endif %}
+
+    {{ content }}
+</div>
