@@ -59,7 +59,7 @@ gulp.task('styles', function() {
             includePaths: [
                 config.sass.folder
             ],
-            sourceComments: true,
+            sourceComments: false,
             stats: true
         }))
         .on('error', function(e) {
