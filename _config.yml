@@ -1,5 +1,6 @@
 name: "Daniel Samuels"
 description: "Software developer based in Cambridge"
+highlighter: pygments
 
 url: "http://danielsamuels.co.uk"
 
