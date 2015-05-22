@@ -11,4 +11,4 @@ defaults:
     -
         values:
             author: "Daniel Samuels"
-            layout: "content"
+            layout: content
