@@ -335,6 +335,9 @@ h1, h2, h3, h4, h5, h6 {
   time + h1, time + h2, time + h3, time + h4, time + h5, time + h6 {
     margin-top: -10px; }
 
+ul {
+  padding-left: 20px; }
+
 p {
   margin-top: 0; }
 
