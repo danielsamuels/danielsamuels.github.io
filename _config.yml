@@ -5,7 +5,7 @@ highlighter: pygments
 url: "http://danielsamuels.co.uk"
 
 # paginate: 10
-permalinks: pretty
+permalink: /words/:year/:month/:day/:title/
 
 defaults:
     -
