@@ -3,8 +3,6 @@ title: How we use Slack at Onespacemedia
 canonical: http://www.onespacemedia.com/news/2015/may/14/how-we-use-slack-onespacemedia/
 ---
 
-### How we use Slack at Onespacemedia
-
 Since joining [Slack](https://slack.com/r/025q26m3-025rtx8g)
 in early March of 2014 it’s grown to be the central communications system at
 [Onespacemedia](http%3A%2F%2Fwww.onespacemedia.com%2F), even taking
@@ -32,11 +30,11 @@ place is in Slack.
 
 The current structure for the development team looks something like this:
 
-  * #commits — The hive of automation. [Bitbucket](https://bitbucket.org/onespacemedia/), [Github](https%3A%2F/github.com/onespacemedia/), [TravisCI](https://travis-ci.org/onespacemedia/), [Coveralls](https://coveralls.io/r/onespacemedia/) and anything else to do with our code goes in here. While this channel is typically muted to stop excessive notifications, it’s still extremely useful to be able to keep track on who is working on what, which builds are passing or failing and how code coverage is looking across various projects.
-  * #developers — The primary channel for development team discussion. Whether it be bug fixing, problem solving or link sharing, this is where it’s done. Probably the most active channel on our account, often filled with imgur or autotrader links.
-  * #sentry — Website error notifications. If a message appears in this channel, something has gone wrong and [Sentry](https://getsentry.com/welcome/) allows us to dig into the issue immediately to help track down and resolve any problems. Thankfully this is a low activity channel.
-  * #development-resources — This is the channel the development team use when they find something cool and want to show it to the rest of the team. Links in here have usually been posted in #developers already, but with the volume of conversation happening they can often get lost, so #development-resources serves as a team-wide bookmarking system.
-  * #uptime-monitor — We use [Uptime Robot](https://uptimerobot.com/) to monitor the status of our websites and have a dedicated channel for it’s reports. Unfortunately we do seem to get a lot of false positives from Uptime Robot so it often feels like the boy who cried wolf.
+  * \#commits — The hive of automation. [Bitbucket](https://bitbucket.org/onespacemedia/), [Github](https%3A%2F/github.com/onespacemedia/), [TravisCI](https://travis-ci.org/onespacemedia/), [Coveralls](https://coveralls.io/r/onespacemedia/) and anything else to do with our code goes in here. While this channel is typically muted to stop excessive notifications, it’s still extremely useful to be able to keep track on who is working on what, which builds are passing or failing and how code coverage is looking across various projects.
+  * \#developers — The primary channel for development team discussion. Whether it be bug fixing, problem solving or link sharing, this is where it’s done. Probably the most active channel on our account, often filled with imgur or autotrader links.
+  * \#sentry — Website error notifications. If a message appears in this channel, something has gone wrong and [Sentry](https://getsentry.com/welcome/) allows us to dig into the issue immediately to help track down and resolve any problems. Thankfully this is a low activity channel.
+  * \#development-resources — This is the channel the development team use when they find something cool and want to show it to the rest of the team. Links in here have usually been posted in #developers already, but with the volume of conversation happening they can often get lost, so #development-resources serves as a team-wide bookmarking system.
+  * \#uptime-monitor — We use [Uptime Robot](https://uptimerobot.com/) to monitor the status of our websites and have a dedicated channel for it’s reports. Unfortunately we do seem to get a lot of false positives from Uptime Robot so it often feels like the boy who cried wolf.
 
 ### #designers
 
@@ -72,9 +70,9 @@ post any interesting articles into the channel. In addition to putting content
 out, the team also makes use of the Twitter and Mailchimp integrations to keep
 track of social interactions, newsletter signups and newsletter sends.
 
-  * #social — The article aggregation channel. Contains the best of the web, the thought-provoking articles and the latest in industry news.
-  * #twitter-feed — Our social interaction feed, contains information about @mentions and retweets.
-  * #video — A newer channel designed to contain discussion around video related content such as team member opinions on current news topics or anything else they want to talk about.
+  * \#social — The article aggregation channel. Contains the best of the web, the thought-provoking articles and the latest in industry news.
+  * \#twitter-feed — Our social interaction feed, contains information about @mentions and retweets.
+  * \#video — A newer channel designed to contain discussion around video related content such as team member opinions on current news topics or anything else they want to talk about.
 
 ### #projects
 
@@ -88,11 +86,11 @@ and viewing related resources.
 Outside of in-team, social media and project channels we also have various
 social channels used for sharing random links or discussing certain topics.
 
-  * #general — Used for general chat about anything and everything, typically contains a lot of links to random webpages that people have found interesting, or images that they’ve found in the depths of reddit.
-  * #attendance — Used for reporting if you’re heading out for a bit, or going to be late due to the A14.
-  * #bakeoff — The company baking competition. Once a month someone has the challenge of baking something and bringing it in for the team to judge. We’ve had bread, cakes, brownies, cakes and some more cakes. We rate each item against a few different metrics; Look, Taste and Difficulty. Currently in the lead is Chiara.
-  * #office — Used for request office supplies such as pens, notebooks and rubber ducks.
-  * #sport — Contains chat about anything sport related.
+  * \#general — Used for general chat about anything and everything, typically contains a lot of links to random webpages that people have found interesting, or images that they’ve found in the depths of reddit.
+  * \#attendance — Used for reporting if you’re heading out for a bit, or going to be late due to the A14.
+  * \#bakeoff — The company baking competition. Once a month someone has the challenge of baking something and bringing it in for the team to judge. We’ve had bread, cakes, brownies, cakes and some more cakes. We rate each item against a few different metrics; Look, Taste and Difficulty. Currently in the lead is Chiara.
+  * \#office — Used for request office supplies such as pens, notebooks and rubber ducks.
+  * \#sport — Contains chat about anything sport related.
 
 In addition to all of this, we also have a bunch of custom slash commands
 which allow us to do things like get the definition of a word, link to a
