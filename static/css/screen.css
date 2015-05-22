@@ -370,7 +370,7 @@ header {
     display: block;
     position: absolute;
     height: 1px;
-    width: 10px;
+    width: 0;
     background-color: #3498db;
     bottom: -1px;
     left: 0; }
