@@ -344,6 +344,9 @@ pre, code {
 time {
   font-size: 0.875rem; }
 
+li + li {
+  margin-top: 14px; }
+
 a {
   color: #000;
   border-bottom: 1px dashed #000;
