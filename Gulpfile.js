@@ -25,7 +25,8 @@ var config = {
         folder: 'bower_components/'
     },
     css: {
-        folder: staticFolder + 'css'
+        folder: staticFolder + 'css',
+        site_folder: '_site/' + staticFolder + 'css'
     },
     js: {
         src: [
@@ -70,6 +71,7 @@ gulp.task('styles', function() {
         }))
         .pipe(pxtorem())
         .pipe(gulp.dest(config.css.folder))
+        .pipe(gulp.dest(config.css.site_folder))
         .pipe(reload({
             stream: true
         }))
@@ -85,22 +87,28 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
     browserSync({
         // Do we want the notifications in the top right when things update?
-        notify: false,
+        notify: true,
         // The prefix in the console for browserSync events
         logPrefix: 'danielsamuels',
         // Inject the changes instead of a reload
         injectChanges: true,
         // The directory to serve HTML files from
-        // server: ['./']
+        server: ['./_site'],
         // Uncomment this and comment the above line if you want to tie
         // browserSync to an already existing server
-        proxy: '0.0.0.0:4000'
+        // proxy: '0.0.0.0:4000'
+        // proxy: '0.0.0.0:8000'
+        open: false,
     });
 
     gulp.watch(config.sass.src, ['styles']);
     gulp.watch(config.html.src, reload);
-    gulp.watch(config.js.src, reload);
+    gulp.watch(config.js.src, ['copy-static', reload]);
 });
+
+gulp.task('copy-static', function () {
+    return gulp.src('static/js/*').pipe(gulp.dest('_site/static/js'))
+})
 
 gulp.task('bower', function() {
     return bower()
