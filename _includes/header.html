@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}Daniel Samuels - Software developer based in Cambridge</title>
+    <link rel="stylesheet" href="/static/css/screen.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if page.canonical %}
+        <link rel="canonical" href="{{ page.canonical }}">
+    {% endif %}
+
+    <script src="/static/js/scroll-progress.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="/">Daniel Samuels</a>
+            <small>Software developer based in Cambridge</small>
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/words/">Words</a>
+            <a href="/projects/">Projects</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <div class="scroll-position"></div>
+    </header>

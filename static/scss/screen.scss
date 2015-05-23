@@ -1,200 +1,265 @@
-$rem-base: 16;
+@import "normalize";
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
 
-// STRIP UNIT
-// It strips the unit of measure and returns it
-@function strip-unit($num) {
-    @return $num / ($num * 0 + 1);
-}
-
-// CONVERT TO REM
-@function convert-to-rem($value, $base-value: $rem-base)  {
-    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
-    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
-    @return $value;
-}
-
-@function rem-calc($values, $base-value: $rem-base) {
-    $max: length($values);
-
-    @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
-
-    $remValues: ();
-    @for $i from 1 through $max {
-        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
-    }
-
-    @return $remValues;
-}
+$flat-blue: #3498db;
+$text-color: #000;
 
 *, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-html, body, .container {
-    min-height: 100%;
+html, body {
     height: 100%;
     width: 100%;
-    color: #fff;
 }
 
-html {
-    -ms-text-size-adjust: 100%;
-    /* 4 */
-    -webkit-text-size-adjust: 100%;
-    /* 4 */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
-html, body {
-    // Mobile
-    font-size: 28%;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin-bottom: 0;
 
-    @for $i from 1 through 14 {
-        @media screen and (min-width: #{$i * 100}px) {
-            font-size: #{(($i * 100) / 14 / 100) * 100%};
+    time + & {
+        margin-top: -10px;
+    }
+}
+
+ul {
+    padding-left: 20px;
+}
+
+p {
+    margin-top: 0;
+}
+
+pre, code {
+    font-size: 14px;
+}
+
+time {
+    font-size: 14px;
+}
+
+li + li {
+    margin-top: 14px;
+}
+
+a {
+    color: $text-color;
+    border-bottom: 1px dashed $text-color;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: border-bottom-color 0.25s;
+
+    &:hover, &:active {
+        border-bottom-color: $flat-blue;
+    }
+}
+
+header {
+    $font-color: $text-color;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+
+    font-weight: 600;
+
+    padding: 30px;
+    // background: rgba(#fff, 0.925);
+    border-bottom: 1px solid rgba($flat-blue, 0.3);
+    font-size: 16px;
+
+    color: $font-color;
+
+    .scroll-position {
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 0;
+        background-color: $flat-blue;
+        bottom: -1px;
+        left: 0;
+    }
+
+    div {
+        float: left;
+        line-height: 1;
+
+        a {
+            display: inline-block;
+            width: 100%;
+            border: none;
+        }
+
+        small {
+            color: #1a1a1a;
+            font-weight: 300;
+        }
+    }
+
+    nav {
+        float: right;
+
+        a {
+            line-height: 32px;
+            border-bottom: 1px dashed #fff;
+        }
+    }
+
+    a {
+        color: $font-color;
+        text-decoration: none;
+
+        & + a {
+            margin-left: 15px;
         }
     }
 }
 
-body {
-    padding: rem-calc(30);
-    font-family: "Helvetica", sans-serif;
+#content-wrapper, #content-dupe {
+    margin: 0 auto;
+    padding: 125px 0 30px;
+    width: 80%;
+    max-width: 600px;
+    font-size: 22px;
+    line-height: 1.5;
+    z-index: 1;
 }
 
-a {
-    color: #fff;
-    text-decoration: none;
+#content-dupe {
+    position: fixed;
+    max-width: 620px;
+    height: 95px;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 10px;
+    overflow-y: hidden;
+    background-color: #FFF;
 
-    &:hover {
-        color: #accfcc;
+    color: transparent;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+
+    a {
+        color: inherit;
+        border-bottom-color: rgba(0, 0, 0, 0.08);
     }
 
-    &.project {
-        line-height: 1.2;
-    }
-
-    &.projects__back {
-        font-size: rem-calc(18);
-        display: inline-block;
-        margin-bottom: 10px;
-    }
-}
-
-p {
-    color: #fff;
-    margin: 0;
-    font-weight: bold;
-    line-height: 1;
-
-    .top & {
-        font-size: rem-calc(95);
-        margin-left: rem-calc(-4);
-    }
-
-    .top &.projects {
-        font-size: rem-calc(50);
-    }
-
-    .bottom & {
-        font-size: rem-calc(40);
+    .expander {
+        padding-top: 125px;
     }
 }
 
-.container {
-    position: relative;
-    background: #171511;
-    padding: rem-calc(20) rem-calc(30);
-    min-height: rem-calc(600);
-}
-
-.highlight {
-    color: #8a0917;
-}
-
-// Angular transitions
-@-webkit-keyframes fadeOutRight {
-    0% {
-        -webkit-transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: translateX(rem-calc(20));
-        opacity: 0;
-    }
-}
-
-@keyframes fadeOutRight {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(rem-calc(20));
-        opacity: 0;
-    }
-}
-
-.top {
+#backdrop {
     position: absolute;
-    width: calc(100% - #{rem-calc(60)});
-    top: rem-calc(20);
-    left: rem-calc(30);
+    top: 95px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
 
-    // Index
-    &.index.ng-enter {
-        -webkit-transition: opacity 350ms linear 270ms;
-        transition: opacity 350ms linear 270ms;
+    #contents {
+        animation-name: backdrop-scroll;
+        animation-duration: 25s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
 
-        opacity: 0;
-    }
+        img {
+            transition: filter 0.35s;
+            filter: grayscale(1);
 
-    &.index.ng-enter-active {
-        opacity: 1;
-    }
-
-    &.index.ng-leave {
-        -webkit-transition: all 270ms linear;
-        transition: all 270ms linear;
-    }
-
-    &.index.ng-leave p {
-    }
-
-    &.index.ng-leave-active p {
-        $delay: 40;
-        @for $i from 1 through 5 {
-            &:nth-child(#{$i}) {
-                -webkit-animation: fadeOutRight 150ms #{$i * $delay - $delay}ms ease-out forwards;
+            &:hover {
+                filter: grayscale(0);
             }
         }
     }
 
-    // Projects
-    &.projects.ng-enter {
-        -webkit-transition: opacity 350ms linear 270ms;
-        transition: opacity 350ms linear 270ms;
-
-        opacity: 0;
+    img {
+        margin: 20px;
     }
 
-    &.projects.ng-enter-active {
-        opacity: 1;
-    }
+    #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
 
-    &.projects.ng-leave {
-        -webkit-transition: opacity 350ms linear;
-        transition: opacity 350ms linear;
+        pointer-events: none;
 
-        opacity: 1;
-    }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
 
-    &.projects.ng-leave-active {
-        opacity: 0;
+            // min-width: 200px;
+            max-width: 90%;
+            // min-height: 200px;
+            max-height: 90%;
+
+            transform: translateX(-50%) translateY(-50%);
+            // height: calc(80% - 95px);
+            margin: 0;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
     }
 }
 
-.bottom {
-    position: absolute;
-    bottom: rem-calc(30);
+@keyframes backdrop-scroll {
+    from {
+        transform: translateX(-273px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+@media only screen and (max-width: 736px) {
+    #content-wrapper {
+        font-size: 18px;
+        padding-top: 160px;
+        width: calc(100% - 60px);
+    }
+
+    #content-dupe {
+        display: none;
+    }
+
+    header {
+        text-align: center;
+        background: #fff;
+
+        div, nav {
+            width: 100%;
+        }
+
+        nav {
+            float: left;
+            margin-top: 12px;
+        }
+    }
+
+    #backdrop {
+        top: 139px;
+    }
+}
+
+@media only screen and (max-width: 383px) {
+
+    #backdrop {
+        top: 171px;
+    }
+
+    #content-wrapper {
+        padding-top: 201px;
+    }
 }

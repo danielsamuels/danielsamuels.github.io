@@ -1,0 +1,16 @@
+{% include header.html %}
+
+<div id="content-dupe"></div>
+
+<div id="content-wrapper">
+
+    <h2>{{ page.title }}</h2>
+    {% if page.date %}
+        <time>{{ page.date | date_to_long_string }}</time>
+    {% endif %}
+
+    {{ content }}
+</div>
+
+<script src="/static/js/content-dupe.js"></script>
+<link rel="stylesheet" href="/static/css/pygments.css">

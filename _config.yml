@@ -1,0 +1,14 @@
+name: "Daniel Samuels"
+description: "Software developer based in Cambridge"
+highlighter: pygments
+
+url: "http://danielsamuels.co.uk"
+
+# paginate: 10
+permalink: /words/:year/:month/:day/:title/
+
+defaults:
+    -
+        values:
+            author: "Daniel Samuels"
+            layout: content
