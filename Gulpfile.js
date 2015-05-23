@@ -87,7 +87,7 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
     browserSync({
         // Do we want the notifications in the top right when things update?
-        notify: true,
+        notify: false,
         // The prefix in the console for browserSync events
         logPrefix: 'danielsamuels',
         // Inject the changes instead of a reload
