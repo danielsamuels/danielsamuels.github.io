@@ -13,3 +13,5 @@ With modernisation of the project flow introducing additional processes and serv
 In addition to automating the setup of a new project on a developer's machine, I also reformed the process of deploying a project onto a production web server.  Initially developers would have to follow a multi-page document detailing the steps required to deploy a website on to Webfaction, a shared hosting provider.  I saw this process as a weak point in our flow and so I spent some time putting together a management project which used Fabric and Ansible to define the final state of a server hosting a Django project.  This allowed us to spin up new instances on Digital Ocean and fully deploy a website in around 5 minutes.
 
 Combining the deployment project with the set-up project means we can now go from having no project files at all to having an entire Django-based CMS hosted on Digital Ocean (or any other provider) in less than 10 minutes.
+
+Outside of work related activites I'm an avid gym-goer and road cyclist.
