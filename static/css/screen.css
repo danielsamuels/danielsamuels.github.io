@@ -409,7 +409,6 @@ header {
 
 #content-dupe {
   position: fixed;
-  width: 100%;
   max-width: 620px;
   height: 95px;
   z-index: 2;
@@ -426,3 +425,15 @@ header {
     border-bottom-color: rgba(0, 0, 0, 0.08); }
   #content-dupe .expander {
     padding-top: 125px; }
+
+@media only screen and (max-width: 736px) {
+  #content-dupe {
+    display: none; }
+  header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.925); }
+    header div, header nav {
+      width: 100%; }
+    header nav {
+      float: left;
+      margin-top: 12px; } }
