@@ -426,14 +426,89 @@ header {
   #content-dupe .expander {
     padding-top: 125px; }
 
+#backdrop {
+  position: absolute;
+  top: 95px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden; }
+  #backdrop #contents {
+    -webkit-animation-name: backdrop-scroll;
+            animation-name: backdrop-scroll;
+    -webkit-animation-duration: 25s;
+            animation-duration: 25s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+    #backdrop #contents img {
+      transition: -webkit-filter 0.35s, filter 0.35s;
+      -webkit-filter: grayscale(1);
+              filter: grayscale(1); }
+      #backdrop #contents img:hover {
+        -webkit-filter: grayscale(0);
+                filter: grayscale(0); }
+  #backdrop img {
+    margin: 20px; }
+  #backdrop #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none; }
+    #backdrop #overlay img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 90%;
+      max-height: 90%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+          -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      margin: 0;
+      border-radius: 50%;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5); }
+
+@-webkit-keyframes backdrop-scroll {
+  from {
+    -webkit-transform: translateX(-273px);
+            transform: translateX(-273px); }
+
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes backdrop-scroll {
+  from {
+    -webkit-transform: translateX(-273px);
+            transform: translateX(-273px); }
+
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
 @media only screen and (max-width: 736px) {
+  #content-wrapper {
+    font-size: 1.125rem;
+    padding-top: 160px;
+    width: calc(100% - 60px); }
   #content-dupe {
     display: none; }
   header {
     text-align: center;
-    background: rgba(255, 255, 255, 0.925); }
+    background: #fff; }
     header div, header nav {
       width: 100%; }
     header nav {
       float: left;
-      margin-top: 12px; } }
+      margin-top: 12px; }
+  #backdrop {
+    top: 139px; } }
+
+@media only screen and (max-width: 383px) {
+  #backdrop {
+    top: 171px; }
+  #content-wrapper {
+    padding-top: 201px; } }
