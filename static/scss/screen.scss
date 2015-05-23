@@ -65,11 +65,12 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 3;
 
     font-weight: 600;
 
     padding: 30px;
-    background: rgba(#fff, 0.925);
+    // background: rgba(#fff, 0.925);
     border-bottom: 1px solid rgba($flat-blue, 0.3);
     font-size: 16px;
 
@@ -120,11 +121,38 @@ header {
     }
 }
 
-#content-wrapper {
+#content-wrapper, #content-dupe {
     margin: 0 auto;
     padding: 125px 0 30px;
     width: 80%;
     max-width: 600px;
     font-size: 22px;
     line-height: 1.5;
+    z-index: 1;
+}
+
+#content-dupe {
+    position: fixed;
+    width: 100%;
+    max-width: 620px;
+    height: 95px;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 10px;
+    overflow-y: hidden;
+    background-color: #FFF;
+
+    color: transparent;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+
+    a {
+        color: inherit;
+        border-bottom-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .expander {
+        padding-top: 125px;
+    }
 }
