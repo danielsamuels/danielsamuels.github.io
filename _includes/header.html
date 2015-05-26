@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{% if page.title %}{{ page.title }} - {% endif %}Daniel Samuels - Software developer based in Cambridge</title>
+
     <link rel="stylesheet" href="/static/css/screen.css">
+    <link rel="stylesheet" href="/static/css/pygments.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for danielsamuels.co.uk" href="/words/feed/" />
 
@@ -11,6 +14,7 @@
         <link rel="canonical" href="{{ page.canonical }}">
     {% endif %}
 
+    <script src="/static/js/content-dupe.js"></script>
     <script src="/static/js/scroll-progress.js"></script>
 </head>
 <body>
