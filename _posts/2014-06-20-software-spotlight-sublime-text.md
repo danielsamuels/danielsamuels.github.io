@@ -4,9 +4,9 @@ canonical: http://www.onespacemedia.com/news/2014/jun/20/software-spotlight-subl
 ---
 
 In this episode of Onespacemedia’s ‘Tools of the Trade’ series, Lead Developer
-[Daniel Samuels](/about/our-people/daniel-samuels) and Head of Product [Thomas
-Rumbold](/about/our-people/thomas-rumbold) talk about why Sublime Text is a
-vital weapon in any software developer's arsenal.
+[Daniel Samuels](http://www.onespacemedia.com/about/our-people/daniel-samuels)
+and Head of Product [Thomas Rumbold](http://www.onespacemedia.com/about/our-people/thomas-rumbold)
+talk about why Sublime Text is a vital weapon in any software developer's arsenal.
 
 
 All of the developers at Onespacemedia use Sublime Text. It’s a fantastic,
