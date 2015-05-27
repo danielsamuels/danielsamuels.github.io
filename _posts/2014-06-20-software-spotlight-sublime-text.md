@@ -58,7 +58,7 @@ when conforming to PEP8:
 I don’t have as many plugins as I used to, but here are the ones worth
 mentioning:
 
-  * **[Package Control**](https://sublime.wbond.net/)
+  * **[Package Control](https://sublime.wbond.net/)**
   * **[Anaconda](https://sublime.wbond.net/packages/Anaconda)**: Makes Sublime awesome for Python development, adding autocomplete, IDE features, PEP8 / Pylint checks.
   * **[Djaneiro](https://sublime.wbond.net/packages/Djaneiro)**: The main thing I use this for is the syntax highlighting in templates.
   * **[Emmet](https://sublime.wbond.net/packages/Emmet)**: The fastest way to write HTML.
@@ -75,20 +75,20 @@ developer though - so although recently I’ve been less hands on with code,
 there are a few, more general things that I think are worth mentioning that
 make Sublime our obvious choice.
 
-**It’s very fast and lightweight
-**Sublime Text is fast. You can typically open a complex project in under ten seconds and get to work quickly. Based on previous experience, some IDE’s take up to a minute to boot a project with lots of moving parts. That gets very annoying very quickly (particularly if you’re switching around throughout the day). Sublime smokes the competition.
+#### It’s very fast and lightweight
+Sublime Text is fast. You can typically open a complex project in under ten seconds and get to work quickly. Based on previous experience, some IDE’s take up to a minute to boot a project with lots of moving parts. That gets very annoying very quickly (particularly if you’re switching around throughout the day). Sublime smokes the competition.
 
-**It’s easy
-**In a general sense, Sublime is easy to use and easy to customise. Working across projects is made simple by some great features and there are a stack of great plugins that help you keep your workflow fast. You can integrate version control plugins, language specific assistance and it’s got a rich collection of settings that lets you configure it exactly as you like it.
+#### It’s easy
+In a general sense, Sublime is easy to use and easy to customise. Working across projects is made simple by some great features and there are a stack of great plugins that help you keep your workflow fast. You can integrate version control plugins, language specific assistance and it’s got a rich collection of settings that lets you configure it exactly as you like it.
 
-**It looks awesome
-**Plainly put, it looks awesome. The vanilla installation looks great but it’s also easy to theme. If you’re staring at code for 8 hours a day, that makes a real difference.
+#### It looks awesome
+Plainly put, it looks awesome. The vanilla installation looks great but it’s also easy to theme. If you’re staring at code for 8 hours a day, that makes a real difference.
 
-**It’s cross compatible
-**Sublime is compatible with Windows, Mac, and Linux. Although we’re a Mac house there’s value in this - in the case we ever need to fire up another machine that runs a different OS, we can still use our beloved Sublime. Little things like this helps keep us moving and that’s always something we like.
+#### It’s cross compatible
+Sublime is compatible with Windows, Mac, and Linux. Although we’re a Mac house there’s value in this - in the case we ever need to fire up another machine that runs a different OS, we can still use our beloved Sublime. Little things like this helps keep us moving and that’s always something we like.
 
-**It has great shortcuts
-**There are lots of great shortcuts in Sublime that allows you to hack up your code, move it around, duplicate parts, find files and switch around between projects. This sort of stuff is really useful because once you’ve learnt them, you can keep your concentration focused on solving problems. In fact, they’re so valuable that we’ve included some of the best in the next section.
+#### It has great shortcuts
+There are lots of great shortcuts in Sublime that allows you to hack up your code, move it around, duplicate parts, find files and switch around between projects. This sort of stuff is really useful because once you’ve learnt them, you can keep your concentration focused on solving problems. In fact, they’re so valuable that we’ve included some of the best in the next section.
 
 ### Shortcuts
 
