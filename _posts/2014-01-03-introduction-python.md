@@ -1,6 +1,7 @@
 ---
 title: "An introduction to Python"
 canonical: http://www.onespacemedia.com/news/2014/jan/3/introduction-python/
+comments_disabled: true
 ---
 
 I started learning how to program at the age of 14 and worked as a freelance

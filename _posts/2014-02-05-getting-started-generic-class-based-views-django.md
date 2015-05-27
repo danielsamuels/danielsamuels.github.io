@@ -1,6 +1,7 @@
 ---
 title: "Getting started with Generic Class Based Views in Django"
 canonical: http://www.onespacemedia.com/news/2014/feb/5/getting-started-generic-class-based-views-django/
+comments_disabled: true
 ---
 
 Before we start, there are a few things you’ll need to be able to follow along:

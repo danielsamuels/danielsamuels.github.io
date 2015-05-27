@@ -1,6 +1,7 @@
 ---
 title: How we use Slack at Onespacemedia
 canonical: http://www.onespacemedia.com/news/2015/may/14/how-we-use-slack-onespacemedia/
+comments_disabled: true
 ---
 
 Since joining [Slack](https://slack.com/r/025q26m3-025rtx8g)

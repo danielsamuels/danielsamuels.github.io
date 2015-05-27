@@ -1,6 +1,7 @@
 ---
 title: "Team insight: an interview with lead developer, Dan Samuels"
 canonical: http://www.onespacemedia.com/news/2014/jul/25/day-life-lead-developer/
+comments_disabled: true
 ---
 
 *Onespacemedia's lead developer, Dan Samuels, started coding at the tender age

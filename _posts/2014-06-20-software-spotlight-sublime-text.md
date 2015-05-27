@@ -1,6 +1,7 @@
 ---
 title: "Software Spotlight: Sublime Text"
 canonical: http://www.onespacemedia.com/news/2014/jun/20/software-spotlight-sublime-text/
+comments_disabled: true
 ---
 
 In this episode of Onespacemedia’s ‘Tools of the Trade’ series, Lead Developer
