@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/danielsamuels
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://danielsamuels.co.uk
+  * I am danielsamuels (https://keybase.io/danielsamuels) on keybase.
+  * I have a public key with fingerprint 2700 9969 F582 FA53 F8A3  23BA 1EAA C8F6 CB49 972A
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "27009969f582fa53f8a323ba1eaac8f6cb49972a",
+            "host": "keybase.io",
+            "key_id": "1eaac8f6cb49972a",
+            "kid": "0101c25df0e3b4f3dd547fea7fc0d6b04409502a5933edcfccddb91e98cb1fe43d560a",
+            "uid": "17c57e2897cf815a8869ea1142e91219",
+            "username": "danielsamuels"
+        },
+        "service": {
+            "hostname": "danielsamuels.co.uk",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1433362383,
+    "expire_in": 157680000,
+    "prev": "a9e2b1b1786cf2a8b7d4b08bd02953e24ca13bf32112bd306154d221908670b1",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIcAnicbVJbSBVBGD6WaVliEBRERu5LESo7M3ubY0IFXUhBu/kQ2mFmZ9Y2PbvH
+PWctMyPpfjFRKXywMuhCEBFiFIFUplgpaaVkKEX1UBS92dWgZru8NQ8z/P//fd8/
+38/fkz41lJZ0cdKo/5pxpCyp/26hH9rsRgZrJeqyGilcK1Xw349lO+Xci3m2k5DC
+EtRlGWMNW6oBLaIiyyAIIkoAJ8Q0LM2kCsY6JFK2tM2NBwwhQ0mc59quyIkgYjOR
+/Q++4ndBBjIwocosmSOqWIgxVdEtTnTLlJlGZUWRsSpDomKEODMt02SMYsCxYVJg
+cQUxVZMDOf9PH91UdQ4NrJuWAVRiGBrmBAAFcgwgwAEwzj2HRLlAM+LYvDJOor64
+pbpsSZSqbZMHcwjs/A+Wa7q5foXQiXluwjXdSgHYlkjEwgE/URMLCDs4jfyVilDb
+YWKkglDNvbjtOlIYCKSZsANtoCCENIgMlC3xnTHb4xE7QKi6ZsjiBG14tZAkmEMK
+KNANzbQgMajOFCoblMkQq4hDxSQAUQtBACBlSNaAqjAoHMuGpssUSIG5KseVwqr4
+JikXknG73CEJ3+NSXfed0uRQUlooZdqUYClCaTNm/1uVteWpP2le/peRWfbh9nR8
+UzoV/ZFqdzfv9ftrCkvTR497lx+dKx2wHmUZzclPr/nOuuvnGiJn8YU6vzOv43BR
+x7JPj+tGI9+efJiouldfsqelyIX+sqVRMHQrpb3qyvyJwYJrwxubMsdnd92uHhq7
+dLq16WbOx10jbTn7deHu/sIZl68PbwH72Yv82MTD8e62Z3M6Tw8cKmxp6rHL+la/
+7brRtm77lgMl+4byr548cGd58Yb6xt2tZ9Nyvq48tvD566yu/Pfa1owpX5aAl+sn
+syZfZawZeNPb682NzhxYvKryRMPnsaHkgnldG4/1/FiU+W7T0QUH9RXhBw3fb6cX
+nzn/saZv+vy+xl9gJDLx
+=aEou
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/danielsamuels
+
+==================================================================
+
