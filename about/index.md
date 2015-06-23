@@ -4,7 +4,7 @@ title: About
 
 I'm currently the lead developer at [Onespacemedia](http://www.onespacemedia.com/), developing large, complex web applications written in Django for companies in Cambridge and beyond. Previously I wrote PHP at iBubble Media and Bug Interactive, working with clients such as Nigella Lawson, EDF Energy and RBS, among others.
 
-I've written software in many programming languages over the years, the main ones being Python, Javascript, Go, PHP, Ruby, C# and Java. I frequently test out new languages and write full software appliations in them to guage their use, the most recent of which being [Slack Slash Commands as a Service](https://sscaas.eu/) which was written in Go (more information in [Projects](/projects/)).
+I've written software in many programming languages over the years, including Python, Javascript, Go, PHP, Ruby, C# and Java. I frequently test out new languages and write full software appliations in them to gauge their use, the most recent of which being [Slack Slash Commands as a Service](https://sscaas.eu/) which was written in Go (more information in [Projects](/projects/)).
 
 While at Onespacemedia I have revolutionised the development workflow, bringing it up-to-date with the industry accepted best practises, including end-to-end automation, unit testing, code coverage and post-deployment monitoring.  When I joined the company, it was using globally installed, unpinned dependencies and required the developer to check out the correct version of each dependency per project, every time.  I introduced the concept of virtual environments to remove version conflicts and create reproducable builds.
 
