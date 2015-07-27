@@ -12,7 +12,7 @@ For those of you who don't know, [Rocket League](http://rocketleague.psyonix.com
 
 At a first glance of the Rocket League replay format it looks like a jumbled mess of data with some random strings dotted around, and unless you have a real replay parser that's pretty much what it is.  To be able to pull data out from this file I had to get down to the byte level and figure out how the format works and how it changes across different games played by different people.
 
-My solution to this problem was a Google Docs Spreadsheet.
+My solution to this problem was a [Google Docs Spreadsheet](https://docs.google.com/spreadsheets/d/1aRSOJM9-0qKcRN1VS2jfFUgtA2AaJBv2R_l2xnsCivg/edit?usp=sharing).
 
 ![Google Sheets Screenshot](http://i.imgur.com/K4RFEXi.jpg)
 
