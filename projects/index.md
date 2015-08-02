@@ -4,6 +4,12 @@ title: Projects
 
 Outside of work hours I like to keep myself busy with little projects here and there. Here's what I've developed so far.
 
+###Rocket League Replays
+[Github](https://github.com/danielsamuels/rocket-league-replays) - [Website](http://www.rocketleaguereplays.com/)
+
+I wrote a custom binary file parser for the Rocket League replay format and then created a database and analysis tool to store all of the information.
+
+
 ###HTML Article to Markdown
 
 [Github](https://github.com/danielsamuels/article-markdown)
