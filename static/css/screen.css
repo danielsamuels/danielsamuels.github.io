@@ -451,6 +451,8 @@ header {
       #backdrop #contents img:hover {
         -webkit-filter: grayscale(0);
                 filter: grayscale(0); }
+    #backdrop #contents .row {
+      height: 94px; }
   #backdrop img {
     margin: 20px; }
   #backdrop #overlay {
