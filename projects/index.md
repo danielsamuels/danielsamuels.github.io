@@ -4,6 +4,12 @@ title: Projects
 
 Outside of work hours I like to keep myself busy with little projects here and there. Here's what I've developed so far.
 
+###Incremental Captialism
+[Github](https://github.com/danielsamuels/incremental-capitalism) - [Website](http://danielsamuels.co.uk/incremental-capitalism/)
+
+An incremental game written in VueJS 2 and VueX 2.  I got an itch to make an incremental after playing [Egg, Inc.](https://play.google.com/store/apps/details?id=com.auxbrain.egginc&hl=en) and spent a weekend putting it together.
+
+
 ###Rocket League Replays
 [Github](https://github.com/danielsamuels/rocket-league-replays) - [Website](http://www.rocketleaguereplays.com/)
 
