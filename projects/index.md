@@ -4,56 +4,56 @@ title: Projects
 
 Outside of work hours I like to keep myself busy with little projects here and there. Here's what I've developed so far.
 
-###Incremental Captialism
+### Incremental Captialism
 [Github](https://github.com/danielsamuels/incremental-capitalism) - [Website](http://danielsamuels.co.uk/incremental-capitalism/)
 
 An incremental game written in VueJS 2 and VueX 2.  I got an itch to make an incremental after playing [Egg, Inc.](https://play.google.com/store/apps/details?id=com.auxbrain.egginc&hl=en) and spent a weekend putting it together.
 
 
-###Rocket League Replays
+### Rocket League Replays
 [Github](https://github.com/danielsamuels/rocket-league-replays) - [Website](http://www.rocketleaguereplays.com/)
 
 I wrote a custom binary file parser for the Rocket League replay format and then created a database and analysis tool to store all of the information.
 
 
-###HTML Article to Markdown
+### HTML Article to Markdown
 
 [Github](https://github.com/danielsamuels/article-markdown)
 
 While building this website I wanted a method of converting HTML-based blog articles which I had previously authored into the Markdown format used here.  This is a very simple tool which uses PhantomJS to read the page, BeautifulSoup to parse the HTML and html2text to convert the HTML to Markdown.  I made use of a very simplistic method of finding the article container element - simply looking for the element with the most `<p>` tags!
 
 
-###Slack Slash Commands as a Service
+### Slack Slash Commands as a Service
 
 [Github](https://github.com/danielsamuels/sscaas/) - [Website](https://sscaas.eu/) - [Twitter](https://twitter.com/sscaas)
 
 We use Slack at [Onespacemedia](http://www.onespacemedia.com), it's awesome, [it's changed the way we communicate](/words/2015/05/14/how-we-use-slack-at-onespacemedia/) and over time we've extended its functionality with various slash commands.  Originally these slash commands ran on a small server in my house, but I realised that they would probably interest other Slack users - so I span them out into Slack Slash Commands as a Service.  What's interesting about SSCaaS is that it's written in Go, even though the original slash commands were Python functions running under Flask.
 
-###Devoweled
+### Devoweled
 
 [Github](https://github.com/danielsamuels/devoweled) - [Website](http://devoweled.posix.me/)
 
 A deceptively simple game - you're given some consonants and you simply have to add vowels to create words.  This is mostly a front-end project, with most of the logic written in Javascript.  The majority of the application is character binds on the main input on the site with different character codes performing different actions (such as starting a new game, getting hints etc).
 
-###Bowler for Ebola
+### Bowler for Ebola
 
 [Github](https://github.com/danielsamuels/bowler-for-ebola) - [Website](http://www.bowlerforebola.com/)
 
 A chain of events on Facebook lead to Bowler for Ebola coming into existence.  The original idea was for people to wear a bowler hat, take a photo and post it on Facebook as a way of raising awareness of the Ebola epidemic in Africa.  I decided to take it a step further and build a website which, using facial recognition, would detect faces in uploaded photos and place a bowler hat on their head.  After a couple of hours of playing with OpenCV I managed to get it working with a reasonable success rate.
 
-###Cineworld ratings
+### Cineworld ratings
 
 [Github](https://github.com/danielsamuels/cineworld-ratings) - [Website](https://chrome.google.com/webstore/detail/cineworld-ratings/lbdmlofdbehjhbdabnhjgplojmgnnhkc?authuser=1)
 
 This Chrome extension was built to scratch a personal itch - I wanted to be able to see how good the films currently playing at Cineworld were, based on Rotten Tomato ratings.  The extension makes use of the Rotten Tomatos API to pull in the ratings and displays them inline on the page, next to the film titles.
 
-###Chrome Foundation
+### Chrome Foundation
 
 [Github](https://github.com/danielsamuels/chrome-foundation) - [Website](https://chrome.google.com/webstore/detail/foundation-overlay/odknmbgidnpnihgllkebklpekefphpbn?authuser=1)
 
 Originally a Chrome extension for users of the Bootstrap framework, I forked the repository and made it work with Zurb's Foundation framework.  It's a simple extension which overlays the Foundation grid on top of the page you're viewing, making use of the column classes which exist on the page.
 
-###Countdown
+### Countdown
 
 [Github](https://github.com/danielsamuels/countdown)
 
