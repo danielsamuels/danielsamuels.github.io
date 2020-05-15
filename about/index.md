@@ -2,7 +2,9 @@
 title: About
 ---
 
-I'm currently the lead developer at [Onespacemedia](http://www.onespacemedia.com/), developing large, complex web applications written in Django for companies in Cambridge and beyond. Previously I wrote PHP at iBubble Media and Bug Interactive, working with clients such as Nigella Lawson, EDF Energy and RBS, among others.
+I'm currently a software developer at HP Inc after my previous employer Bromium was acquired in September 2019.
+
+Previously I was the lead developer at [Onespacemedia](http://www.onespacemedia.com/), developing large, complex web applications written in Django for companies in Cambridge and beyond. Previously I wrote PHP at iBubble Media and Bug Interactive, working with clients such as Nigella Lawson, EDF Energy and RBS, among others.
 
 I've written software in many programming languages over the years, including Python, Javascript, Go, PHP, Ruby, C# and Java. I frequently test out new languages and write full software appliations in them to gauge their use, the most recent of which being [Slack Slash Commands as a Service](https://sscaas.eu/) which was written in Go (more information in [Projects](/projects/)).
 
