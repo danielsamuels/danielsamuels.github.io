@@ -8,7 +8,7 @@ Previously I was the lead developer at [Onespacemedia](http://www.onespacemedia.
 
 I've written software in many programming languages over the years, including Python, Javascript, Go, PHP, Ruby, C# and Java. I frequently test out new languages and write full software appliations in them to gauge their use, the most recent of which being [Slack Slash Commands as a Service](https://sscaas.eu/) which was written in Go (more information in [Projects](/projects/)).
 
-## My time at Onespacemedia
+### My time at Onespacemedia
 While at Onespacemedia I have revolutionised the development workflow, bringing it up-to-date with the industry accepted best practises, including end-to-end automation, unit testing, code coverage and post-deployment monitoring.  When I joined the company, it was using globally installed, unpinned dependencies and required the developer to check out the correct version of each dependency per project, every time.  I introduced the concept of virtual environments to remove version conflicts and create reproducable builds.
 
 Over the years I evolved the CMS offering, making it available via `pip` and introducing features such as in-browser image manipulation, Google Apps domain based logins to the admin system, and a page creation system which made it simple for anyone to create high-quality, engaging web pages.
