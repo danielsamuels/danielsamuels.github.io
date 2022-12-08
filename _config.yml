@@ -1,4 +1,4 @@
-name: "Daniel Samuels"
+name: "Daniel Finch"
 description: "Software developer based in Cambridge"
 highlighter: rouge
 
@@ -10,5 +10,5 @@ permalink: /words/:year/:month/:day/:title/
 defaults:
     -
         values:
-            author: "Daniel Samuels"
+            author: "Daniel Finch"
             layout: content
