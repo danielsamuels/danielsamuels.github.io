@@ -2,7 +2,7 @@ name: "Daniel Finch"
 description: "Software developer based in Cambridge"
 highlighter: rouge
 
-url: "http://danielsamuels.co.uk"
+url: "http://danielfinch.co.uk"
 
 # paginate: 10
 permalink: /words/:year/:month/:day/:title/
