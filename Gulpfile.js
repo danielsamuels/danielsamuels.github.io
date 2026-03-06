@@ -5,10 +5,9 @@ var gulp         = require('gulp'),
     changed      = require('gulp-changed'),
     gulpIf       = require('gulp-if'),
     pxtorem      = require('gulp-pxtorem'),
-    sass         = require('gulp-sass'),
+    sass         = require('gulp-sass')(require('sass')),
     size         = require('gulp-size'),
     sourceMaps   = require('gulp-sourcemaps'),
-    runSequence  = require('run-sequence'),
     rename       = require('gulp-rename'),
     reload       = browserSync.reload;
 
@@ -81,7 +80,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(config.sass.src, ['styles']);
+    gulp.watch(config.sass.src, gulp.series('styles'));
 });
 
 gulp.task('serve', function() {
@@ -101,9 +100,9 @@ gulp.task('serve', function() {
         open: false,
     });
 
-    gulp.watch(config.sass.src, ['styles']);
+    gulp.watch(config.sass.src, gulp.series('styles'));
     gulp.watch(config.html.src, reload);
-    gulp.watch(config.js.src, ['copy-static', reload]);
+    gulp.watch(config.js.src, gulp.series('copy-static', reload));
 });
 
 gulp.task('copy-static', function () {
@@ -146,26 +145,18 @@ gulp.task('bowerFiles', function() {
         .pipe(gulp.dest('static/scss'));
 });
 
-gulp.task('initialise', function(callback) {
-        return runSequence(
-        // Install the project dependancies from `bower.json`
-        'bower',
+gulp.task('initialise', gulp.series(
+    // Install the project dependancies from `bower.json`
+    'bower',
 
-        // Move the bower files to their final destination.
-        'bowerFiles',
+    // Move the bower files to their final destination.
+    'bowerFiles'
+));
 
-        callback
-    );
-})
+gulp.task('default', gulp.series(
+    // Perform the initial compilation of the SCSS files.
+    'styles',
 
-gulp.task('default', function(callback) {
-    return runSequence(
-        // Perform the initial compilation of the SCSS files.
-        'styles',
-
-        // Start watching for changes to SCSS files.
-        'serve',
-
-        callback
-    );
-});
+    // Start watching for changes to SCSS files.
+    'serve'
+));
