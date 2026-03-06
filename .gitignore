@@ -67,6 +67,8 @@ docs/_build/
 # Leftovers from mergetool
 *.orig
 
+# Other random stuff that doesn't need to be checked in
 node_modules/
 bower_components/
 _site
+.obsidian
