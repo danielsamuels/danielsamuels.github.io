@@ -73,3 +73,5 @@ bower_components/
 _site
 .obsidian
 static/css/
+Gemfile.lock
+vendor/
