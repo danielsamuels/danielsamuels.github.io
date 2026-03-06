@@ -4,11 +4,20 @@ title: Projects
 
 Outside of work hours I like to keep myself busy with little projects here and there. Here's what I've developed so far.
 
-### Incremental Captialism
+### Ely Chess Club
+[Github](https://github.com/danielsamuels/ely-chess-club) [Website](https://www.elybeetchess.co.uk/)
+
+I picked up chess during COVID (urgh), and have enjoyed it ever since. I was the captain of one of our teams for several seasons and created a website to help increase the inflow of new members. It's been very successful, and we now have a thriving local team to be proud of.
+
+### Pairwise Ranker
+[Github](https://github.com/danielsamuels/pairwise-ranker) [Website](https://pairwise.danielfinch.co.uk/)
+
+My first foray into the new world of "vibe coding". I used Replit for this and didn't write a single line of code. This is what got me hooked with LLMs. Seeing the capability and understanding the possibility led me to diving head-first into local LLMs, cloud-hosted models and everything related to GenAI.
+
+### Incremental Capitalism
 [Github](https://github.com/danielsamuels/incremental-capitalism) - [Website](http://danielsamuels.co.uk/incremental-capitalism/)
 
 An incremental game written in VueJS 2 and VueX 2.  I got an itch to make an incremental after playing [Egg, Inc.](https://play.google.com/store/apps/details?id=com.auxbrain.egginc&hl=en) and spent a weekend putting it together.
-
 
 ### Rocket League Replays
 [Github](https://github.com/danielsamuels/rocket-league-replays) - [Website](http://www.rocketleaguereplays.com/)
