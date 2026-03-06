@@ -28,7 +28,7 @@ Each model will be given the same prompt, in the format of:
 > It's the 2026 Australia (Melbourne) Formula 1 Grand Prix this weekend. In what positions do you believe Lindblad, Piastri, Perez, Bottas will finish? You can give the same answer for multiple drivers, you're trying to be closest to the actual result. Additionally, of all the drivers on the grid, who will get the most overtakes?
 
 
-# Race 1 - Australia
+## Race 1 - Australia
 
 So, let's get started - who are the drivers, and what are the predictions for Australia?
 

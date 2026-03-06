@@ -20,7 +20,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
-    margin-bottom: 0;
+    margin-bottom: 12px;
 
     time + & {
         margin-top: -10px;
@@ -129,15 +129,14 @@ header {
     margin: 0 auto;
     padding: 125px 0 30px;
     width: 80%;
-    max-width: 600px;
-    font-size: 22px;
+    max-width: 1000px;
+    font-size: 18px;
     line-height: 1.5;
     z-index: 1;
 }
 
 #content-dupe {
     position: fixed;
-    max-width: 620px;
     height: 95px;
     z-index: 2;
     left: 0;
@@ -269,5 +268,20 @@ header {
 
     #content-wrapper {
         padding-top: 201px;
+    }
+}
+
+table {
+    width: 100px;
+    margin-bottom: 8px;
+
+    th {
+        padding-bottom: 4px;
+        text-align: left;
+    };
+
+    td {
+        padding: 0 8px;
+        border-top: 1px solid #979797;
     }
 }
