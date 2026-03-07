@@ -5,7 +5,7 @@ if (progressBar && header) {
     let animationFrame = null;
 
     const updateProgress = () => {
-        document.documentElement.style.setProperty("--header-offset", `${header.offsetHeight + 12}px`);
+        document.documentElement.style.setProperty("--header-offset", `${header.offsetHeight}px`);
 
         const scrollableHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
         const progress = scrollableHeight === 0 ? 0 : Math.min(window.scrollY / scrollableHeight, 1);
