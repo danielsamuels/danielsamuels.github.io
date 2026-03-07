@@ -1,0 +1,179 @@
+name: Cloudflare Pages PR Maintenance
+
+# Cloudflare Pages maintenance notes:
+# - This workflow runs on `pull_request_target` so it can comment on forked PRs and attempt cleanup when
+#   pull requests close.
+# - It uses the same repository variables and secret as the deploy workflow.
+# - Fork PRs get an explanation comment instead of a preview URL because Cloudflare credentials are not
+#   available to forked `pull_request` runs.
+# - Preview cleanup only runs for same-repo PRs after close and is best-effort: Cloudflare does not allow
+#   deleting the latest deployment for a branch, so one preview deployment may remain.
+#
+# Requires repository variables CLOUDFLARE_ACCOUNT_ID and
+# CLOUDFLARE_PAGES_PROJECT_NAME, plus the CLOUDFLARE_API_TOKEN secret.
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+concurrency:
+  group: cloudflare-pages-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+  CLOUDFLARE_PAGES_PROJECT_NAME: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME }}
+
+jobs:
+  explain-fork-preview-skip:
+    if: github.event.action != 'closed' && github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create or update fork preview comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const header = '<!-- cloudflare-pages-preview -->';
+            const body = [
+              header,
+              '## Cloudflare Pages Preview',
+              '',
+              'Preview deployments are skipped for pull requests from forks because this workflow needs Cloudflare credentials that GitHub does not expose to forked `pull_request` runs.',
+            ].join('\n');
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+
+            const existing = comments.find((comment) =>
+              comment.user?.type === 'Bot' && comment.body?.includes(header)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body,
+              });
+            }
+
+  cleanup-preview:
+    if: github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Best-effort cleanup for closed pull request previews
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python <<'PY'
+          import json
+          import os
+          import sys
+          from urllib.error import HTTPError, URLError
+          from urllib.request import Request, urlopen
+
+          account_id = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+          project_name = os.environ["CLOUDFLARE_PAGES_PROJECT_NAME"]
+          api_token = os.environ["CLOUDFLARE_API_TOKEN"]
+          branch = os.environ["PR_BRANCH"]
+          api_root = (
+              f"https://api.cloudflare.com/client/v4/accounts/{account_id}"
+              f"/pages/projects/{project_name}/deployments"
+          )
+          headers = {
+              "Authorization": f"Bearer {api_token}",
+              "Content-Type": "application/json",
+          }
+
+          def request(url, method="GET"):
+              req = Request(url, headers=headers, method=method)
+              with urlopen(req) as response:
+                  return json.load(response)
+
+          deployments = []
+          page = 1
+          while True:
+              payload = request(f"{api_root}?env=preview&page={page}&per_page=100")
+              page_results = payload.get("result") or []
+              deployments.extend(page_results)
+              if len(page_results) < 100:
+                  break
+              page += 1
+
+          matching = [
+              deployment
+              for deployment in deployments
+              if deployment.get("deployment_trigger", {}).get("metadata", {}).get("branch") == branch
+          ]
+          matching.sort(
+              key=lambda deployment: deployment.get("modified_on") or deployment.get("created_on") or "",
+              reverse=True,
+          )
+
+          print(f"Found {len(matching)} preview deployment(s) for branch {branch}.")
+          if not matching:
+              sys.exit(0)
+
+          latest = matching[0]
+          deletable = matching[1:]
+          deleted = []
+          failed = []
+
+          # Best-effort only: Cloudflare does not allow deleting the latest deployment for a branch.
+          for deployment in deletable:
+              deployment_id = deployment["id"]
+              try:
+                  response = request(f"{api_root}/{deployment_id}", method="DELETE")
+              except HTTPError as exc:
+                  failed.append((deployment_id, exc.read().decode()))
+                  continue
+              except URLError as exc:
+                  failed.append((deployment_id, str(exc)))
+                  continue
+
+              if response.get("success"):
+                  deleted.append(deployment_id)
+              else:
+                  failed.append((deployment_id, json.dumps(response.get("errors") or response)))
+
+          summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary_path:
+              with open(summary_path, "a", encoding="utf-8") as summary:
+                  summary.write("## Cloudflare preview cleanup\n\n")
+                  summary.write(f"- Branch: `{branch}`\n")
+                  summary.write(f"- Matched preview deployments: {len(matching)}\n")
+                  summary.write(f"- Retained latest deployment: `{latest['id']}`\n")
+                  summary.write(f"- Deleted older deployments: {len(deleted)}\n")
+                  if failed:
+                      summary.write(f"- Failed deletions: {len(failed)}\n")
+                  summary.write(
+                      "\nCloudflare does not allow deleting the latest deployment for a branch, so cleanup is best-effort only.\n"
+                  )
+
+          print(f"Retained latest deployment: {latest['id']}")
+          print(f"Deleted older deployments: {len(deleted)}")
+          if failed:
+              print("Some older preview deployments could not be deleted:")
+              for deployment_id, error in failed:
+                  print(f"- {deployment_id}: {error}")
+          PY

@@ -1,25 +1,60 @@
-name: Build and Deploy
+name: Cloudflare Pages
 
+# Cloudflare Pages operating notes:
+# - Create one Pages project that accepts direct uploads (Wrangler / no Git integration), set its
+#   production branch to `master`, and set `CLOUDFLARE_PAGES_PROJECT_NAME` to that project name.
+# - Add GitHub repository secret `CLOUDFLARE_API_TOKEN` with permission to deploy Cloudflare Pages for the
+#   target account/project.
+# - Add GitHub repository variables `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_PAGES_PROJECT_NAME`.
+# - Keep `master` as the Cloudflare Pages production branch; pushes to `master` deploy production.
+# - Pull requests targeting `master` build previews for same-repo branches and create or update one PR
+#   comment with the latest preview URL.
+# - Pull requests from forks still build, but preview deploys are skipped because GitHub does not expose
+#   Cloudflare credentials to forked `pull_request` runs.
+# - Configure custom domains in the Cloudflare Pages project; production uses those hostnames, while PR
+#   previews keep Cloudflare-generated preview URLs. The committed `CNAME` can stay in the repo for
+#   compatibility/reference, but it does not configure Cloudflare Pages by itself.
+# - Local verification: `bundle exec jekyll build` for a production build, or `./serve.sh` for local serving.
+# - Workflow triggers: pushes to `master` => production deploy; PR open/sync/reopen/ready_for_review against
+#   `master` => preview deploy/comment.
+#
+# Requires repository variables CLOUDFLARE_ACCOUNT_ID and
+# CLOUDFLARE_PAGES_PROJECT_NAME, plus the CLOUDFLARE_API_TOKEN secret.
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: cloudflare-pages-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
+
+env:
+  CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+  CLOUDFLARE_PAGES_PROJECT_NAME: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout push ref
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
+
+      - name: Checkout pull request head
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -32,20 +67,132 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload built site artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: site
           path: _site
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
 
-  deploy:
-    if: github.ref == 'refs/heads/master'
+  deploy-production:
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      deployments: write
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - name: Deploy production site to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        env:
+          CLOUDFLARE_BRANCH: master
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy _site --project-name="$CLOUDFLARE_PAGES_PROJECT_NAME" --branch="$CLOUDFLARE_BRANCH"
+
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    outputs:
+      preview_url: ${{ steps.preview-url.outputs.preview_url }}
+    steps:
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - name: Skip preview deploys for forked pull requests
+        if: github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "Cloudflare Pages preview deployments are skipped for pull requests from forks because Cloudflare credentials are not exposed to forked pull_request workflows." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Deploy preview to Cloudflare Pages
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        env:
+          CLOUDFLARE_BRANCH: ${{ github.event.pull_request.head.ref }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy _site --project-name="$CLOUDFLARE_PAGES_PROJECT_NAME" --branch="$CLOUDFLARE_BRANCH"
+
+      - name: Capture preview URL
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        id: preview-url
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs.pages-deployment-alias-url || steps.deploy.outputs.deployment-url }}
+        run: |
+          if [ -z "$PREVIEW_URL" ]; then
+            echo "Wrangler did not return a preview URL." >&2
+            exit 1
+          fi
+
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+          echo "Preview deployed to $PREVIEW_URL" >> "$GITHUB_STEP_SUMMARY"
+
+  comment-preview:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: deploy-preview
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create or update preview comment
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ needs.deploy-preview.outputs.preview_url }}
+        with:
+          script: |
+            const header = '<!-- cloudflare-pages-preview -->';
+            const body = [
+              header,
+              '## Cloudflare Pages Preview',
+              '',
+              `Preview URL: ${process.env.PREVIEW_URL}`,
+            ].join('\n');
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+
+            const existing = comments.find((comment) =>
+              comment.user?.type === 'Bot' && comment.body?.includes(header)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body,
+              });
+            }
