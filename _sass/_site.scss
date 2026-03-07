@@ -233,6 +233,7 @@ table {
     white-space: nowrap;
 
     img {
+      height: 50px;
       margin: 20px;
       filter: grayscale(1);
       transition: filter 0.35s ease;
@@ -244,17 +245,16 @@ table {
   }
 
   #overlay {
-    position: absolute;
-    inset: var(--header-offset) 0 0;
+    position: relative;
     z-index: 1;
     display: grid;
     place-items: center;
+    min-height: 100vh;
+    padding: calc(var(--header-offset) + 2rem) 1.5rem 2rem;
     pointer-events: none;
 
     img {
-      width: auto;
-      max-width: 90%;
-      max-height: 90%;
+      width: min(320px, 60vw);
       margin: 0;
       border-radius: 50%;
       box-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
@@ -295,6 +295,10 @@ table {
 @media only screen and (max-width: 430px) {
   .site-nav {
     gap: 0.45rem 0.85rem;
+  }
+
+  #backdrop #overlay img {
+    width: min(280px, 72vw);
   }
 }
 
