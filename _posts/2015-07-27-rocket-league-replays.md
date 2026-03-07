@@ -8,13 +8,13 @@ For those of you who don't know, [Rocket League](http://rocketleague.psyonix.com
 
 ## Byte level parsing
 
-![Replay file data](http://i.imgur.com/NjhwTl4.jpg)
+![Replay file data](https://i.imgur.com/NjhwTl4.jpg)
 
 At a first glance of the Rocket League replay format it looks like a jumbled mess of data with some random strings dotted around, and unless you have a real replay parser that's pretty much what it is.  To be able to pull data out from this file I had to get down to the byte level and figure out how the format works and how it changes across different games played by different people.
 
 My solution to this problem was a [Google Docs Spreadsheet](https://docs.google.com/spreadsheets/d/1aRSOJM9-0qKcRN1VS2jfFUgtA2AaJBv2R_l2xnsCivg/edit?usp=sharing).
 
-![Google Sheets Screenshot](http://i.imgur.com/K4RFEXi.jpg)
+![Google Sheets Screenshot](https://i.imgur.com/K4RFEXi.jpg)
 
 The information I had was split into two parts, known data and unknown data.  The known data was information such as the final score of the game, or the number of players on each team.  With this known data I was able to look through the hex data and find out which values correlated, this proved to be an extremely effective strategy and the majority of the information was discovered this way.  With a string such as the one in the image above I knew which bytes changed and therefore how to write my regular expressions to suit.  In this case the entire string until column AJ is static, meaning I just needed to search for that string and then the next byte would be my score. Simple.  Unfortunately this wasn't the case for all of my data, so I painstakingly put together sheets after sheets of hex data and combed through looking for patterns until I was able to parse the entire metadata header from the replay file.
 
