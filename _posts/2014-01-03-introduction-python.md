@@ -31,7 +31,7 @@ installed correctly, it will load up into the interactive shell, this is a
 full Python environment which allows you to write and run any Python code in
 the same way you can with a .py file. If you didn't get a Python shell from
 running python you may need to download and install it from the Python website
-- <http://www.python.org/download/> \- or from your operating system's package
+- <https://www.python.org/download/> \- or from your operating system's package
 manager.
 
 ## Writing our first lines of code
@@ -198,8 +198,8 @@ Python, I would recommend visiting the official website -
 other useful resources which will allow you to take your programming to the
 next level, we've barely scratched the surface. If you like learning to
 program in an interactive manner, I would also recommend Codecademy (
-<http://www.codecademy.com/tracks/python> ), their lessons are very easy to
+<https://www.codecademy.com/tracks/python> ), their lessons are very easy to
 follow along with and are a good extension of this tutorial.
 
 [This article was originally published in issue 178 of Future Publications
-'Linux Format' magazine.](http://www.linuxformat.com/archives?issue=178)
+'Linux Format' magazine.](https://www.linuxformat.com/archives?issue=178)

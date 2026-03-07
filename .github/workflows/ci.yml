@@ -1,0 +1,47 @@
+name: Jekyll CI
+
+# Cloudflare Pages Git integration checklist:
+# - Connect this GitHub repository to a single Cloudflare Pages project via Git integration; Pages,
+#   not GitHub Actions, owns production and preview deploys.
+# - Production branch: `master`.
+# - Preview deployments: leave branch/PR previews enabled in Pages so non-production branches deploy
+#   automatically. PR previews are only created for branches in this repository, so forked PRs
+#   should be expected to get CI here but not a Cloudflare preview URL unless the branch is pushed
+#   to this repository.
+# - Build configuration: Root directory = repo root (leave blank in Pages), Build command =
+#   `bundle exec jekyll build`, Build output directory = `_site`.
+# - Environment: pin Ruby 3.3 in Pages (for example with `RUBY_VERSION=3.3`) to match this repo
+#   and CI.
+# - Custom domains live in the Cloudflare Pages dashboard/DNS, not in a `CNAME` file in this repo.
+# - This workflow is CI-only: it validates the Jekyll build and does not deploy, comment on pull
+#   requests, or clean up previews. It intentionally runs on every push and pull request so branch
+#   changes get the same validation coverage as Cloudflare preview builds.
+# - Local verification: `bundle exec jekyll build` for a production build, or `./serve.sh` for
+#   local serving.
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: jekyll-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build

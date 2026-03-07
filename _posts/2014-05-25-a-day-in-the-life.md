@@ -56,7 +56,7 @@ to understand design decisions and work with the designers to iterate and
 improve based on the combined knowledge.  You actually pick up aspects of
 these skills just by being around people who are great at their jobs. I’ve
 designed a couple of little side projects (such as my [personal
-website](http://danielsamuels.co.uk/)) and they look much better than they
+website](https://danielsamuels.co.uk/)) and they look much better than they
 would have done if I had designed them 2-3 years ago.
 
 ### What do you like most about your job?

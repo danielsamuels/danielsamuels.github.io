@@ -72,5 +72,7 @@ node_modules/
 bower_components/
 _site
 .obsidian
-static/css/
+.omc/
+static/css/*.css
+static/css/*.map
 vendor/bundle/

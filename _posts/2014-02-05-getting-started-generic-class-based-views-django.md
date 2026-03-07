@@ -276,10 +276,10 @@ def example_method(arg1, arg2):
 ..is essentially just a signature, it doesn’t do anything, but if you wanted
 to override it you’d need to include arg1 and arg2 in your definition and it’s
 the same for overriding GCBV methods. One of the best tools for finding out
-CBV method signatures is “[Classy Class-Based Views](http://ccbv.co.uk/)”, you
+CBV method signatures is “[Classy Class-Based Views](https://ccbv.co.uk/)”, you
 can view any Class Based View for every version of Django and see what the
 signatures are. What we’re going to need is the signature for
-“get_success_url” for the UpdateView GCBV, so we’ll need [this page](http://cc
+“get_success_url” for the UpdateView GCBV, so we’ll need [this page](https://cc
 bv.co.uk/projects/Django/1.6/django.views.generic.edit/UpdateView/). If you
 scroll down a little, you should be able to see the list of methods and
 get_success_url within. You can click on the row to dive into the actual code

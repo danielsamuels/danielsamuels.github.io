@@ -41,7 +41,7 @@ and that’s the Blackboard theme - I adore it and I don’t expect to ever chan
 it, it’s just that good. There’s a bunch of boring stuff in here, but here’s
 some of the key changes:
 
-  * **Font face**: I’m using [Inconsolata](http://levien.com/type/myfonts/inconsolata.html), a font designed for code. It was a tough choice changing my font, especially as I had used Monaco for many years before, but Inconsolata seemed like a very good replacement for it.
+  * **Font face**: I’m using [Inconsolata](https://levien.com/type/myfonts/inconsolata.html), a font designed for code. It was a tough choice changing my font, especially as I had used Monaco for many years before, but Inconsolata seemed like a very good replacement for it.
   * **Highlight** **line**: I’m not sure how anyone can use a text editor without this, it’s essential to keep track of where you are in your code.
   * **Save on focus lost**: This is a very useful setting, especially when working on HTML files - you can make a change, Cmd+Tab back to Chrome, refresh and it’s saved in the time it took you to switch context. It’s also great for making sure you don’t lose work, saving your SCSS files so they get rebuilt and saving me from hitting Cmd+S every 10 seconds (although I still do...).
   * **Scroll past end**: Ever been working on a file and the code you’ve been writing has been sitting right at the bottom of your screen, frustrating you? I was in that situation and it annoyed me, but along came scroll_past_end and saved the day. I don’t know what I would do without it.
@@ -120,5 +120,4 @@ something awesome in our settings, please let us know in the comments below
 (but if you’re going to suggest that we use Vim or Emacs, don’t bother!).
 Having said that, if anyone has actually found out how to exit vim, please let
 us know.
-
 
