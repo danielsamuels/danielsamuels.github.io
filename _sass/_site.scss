@@ -279,22 +279,117 @@ table {
 
   .site-header {
     justify-content: center;
+    gap: 1rem 1.5rem;
     padding: 1.25rem 1rem;
     text-align: center;
   }
 
   .site-brand {
     justify-items: center;
+    gap: 0.35rem;
+
+    small {
+      font-size: 1rem;
+    }
   }
 
   .site-nav {
     justify-content: center;
+    gap: 0.75rem 1rem;
+  }
+
+  #content-wrapper {
+    padding-top: calc(var(--header-offset) + 1rem);
+    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+    line-height: 1.8;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 1.7rem + 0.9vw, 2.5rem);
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    table,
+    pre {
+      margin-bottom: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 0.85rem;
+    }
+
+    time {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  :root {
+    --content-width: calc(100vw - 1.5rem);
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  .site-header {
+    position: sticky;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem 0.75rem 0.85rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.55rem;
+
+    a {
+      display: block;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      background: rgba(255, 255, 255, 0.92);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    }
+  }
+
+  #content-wrapper {
+    padding-top: 1.75rem;
+  }
+
+  #backdrop {
+    #contents {
+      top: 0;
+    }
+
+    #overlay {
+      padding: 2.5rem 1rem 2rem;
+    }
   }
 }
 
 @media only screen and (max-width: 430px) {
   .site-nav {
-    gap: 0.45rem 0.85rem;
+    gap: 0.45rem;
+
+    a {
+      padding: 0.75rem 0.9rem;
+    }
+  }
+
+  #content-wrapper {
+    font-size: 1.125rem;
   }
 
   #backdrop #overlay img {
