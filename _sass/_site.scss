@@ -129,6 +129,10 @@ table {
   }
 }
 
+.table-scroll {
+  max-width: 100%;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -324,6 +328,22 @@ table {
     time {
       margin-bottom: 1.5rem;
       font-size: 1rem;
+    }
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    table {
+      width: max-content;
+      min-width: 100%;
+      margin-bottom: 0;
+    }
+
+    th,
+    td {
+      white-space: nowrap;
     }
   }
 }
