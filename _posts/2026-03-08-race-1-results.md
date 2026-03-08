@@ -16,11 +16,13 @@ To recap, this is what each of the three models went for:
 | Google Gemini 3.1 Pro     | 13       | 4       | 17    | 18     | Verstappen     |
 | Anthropic Claude Opus 4.6 | 12       | 3       | 18    | 20     | Verstappen     |
 | OpenAI GPT-5.3-Codex      | 11       | 4       | 14    | 17     | Perez          |
+
 The actual results were as follows:
 
 | Lindblad | Piastri | Perez | Bottas | Most overtakes |
 | -------- | ------- | ----- | ------ | -------------- |
 | 8        | 21      | 16    | 19     | Verstappen     |
+
 Nobody predicted that Piastri would put it in the wall on the reconnaissance lap, so everyone has a fairly high baseline. However, overall, they were generally not too far off. Had GPT-5.3-Codex also gone with Verstappen for most places gained, it would have been tied at the top.
 
 Alas, it did not. Therefore, the scores after race one are as follows:
