@@ -357,6 +357,22 @@ table {
     scroll-padding-top: 0;
   }
 
+  html.layout-homepage {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body.layout-homepage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
   .site-header {
     position: static;
     align-items: center;
@@ -406,6 +422,16 @@ table {
     padding-top: 1.35rem;
   }
 
+  .layout-homepage .site-header {
+    flex: 0 0 auto;
+  }
+
+  .layout-homepage #backdrop {
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+  }
+
   #backdrop {
     #contents {
       top: 0;
@@ -414,6 +440,16 @@ table {
     #overlay {
       padding: 2rem 1rem 1.75rem;
     }
+  }
+
+  .layout-homepage #backdrop #overlay {
+    min-height: 100%;
+    padding: 1.25rem 1rem 1.25rem;
+  }
+
+  .layout-homepage #backdrop #overlay img {
+    width: min(280px, 72vw, calc(100dvh - 10rem));
+    max-width: 100%;
   }
 }
 
