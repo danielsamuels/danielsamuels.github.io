@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{% if page.layout %} class="layout-{{ page.layout }}"{% endif %}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,8 +27,9 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for danielfinch.co.uk" href="{{ '/words/feed/' | relative_url }}">
 
     <script defer src="{{ '/static/js/scroll-progress.js' | relative_url }}?v={{ asset_version | strip }}"></script>
+    <script defer src="{{ '/static/js/responsive-tables.js' | relative_url }}?v={{ asset_version | strip }}"></script>
 </head>
-<body>
+<body{% if page.layout %} class="layout-{{ page.layout }}"{% endif %}>
     <header class="site-header">
         <div class="site-brand">
             <a href="/">Daniel Finch</a>

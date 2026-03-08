@@ -1,5 +1,6 @@
 const contents = document.getElementById("contents");
 const header = document.querySelector(".site-header");
+const backdrop = document.getElementById("backdrop");
 
 if (contents) {
     const imageWidth = 273;
@@ -17,7 +18,8 @@ if (contents) {
 
     const buildBackdrop = () => {
         const headerHeight = header ? header.offsetHeight : 0;
-        const vertical = Math.ceil((window.innerHeight - headerHeight) / imageHeight) + 1;
+        const availableHeight = backdrop ? backdrop.clientHeight : window.innerHeight - headerHeight;
+        const vertical = Math.ceil(Math.max(availableHeight, 0) / imageHeight) + 1;
         const horizontal = Math.ceil(window.innerWidth / imageWidth) + 2;
         const output = [];
 

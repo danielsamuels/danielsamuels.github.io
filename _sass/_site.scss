@@ -129,6 +129,10 @@ table {
   }
 }
 
+.table-scroll {
+  max-width: 100%;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -279,22 +283,192 @@ table {
 
   .site-header {
     justify-content: center;
+    gap: 1rem 1.5rem;
     padding: 1.25rem 1rem;
     text-align: center;
   }
 
   .site-brand {
     justify-items: center;
+    gap: 0.35rem;
+
+    small {
+      font-size: 1rem;
+    }
   }
 
   .site-nav {
     justify-content: center;
+    gap: 0.75rem 1rem;
+  }
+
+  #content-wrapper {
+    padding-top: calc(var(--header-offset) + 1rem);
+    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+    line-height: 1.8;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 1.7rem + 0.9vw, 2.5rem);
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote,
+    table,
+    pre {
+      margin-bottom: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 0.85rem;
+    }
+
+    time {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    table {
+      width: max-content;
+      min-width: 100%;
+      margin-bottom: 0;
+    }
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  :root {
+    --content-width: calc(100vw - 1.5rem);
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  html.layout-homepage {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body.layout-homepage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .site-header {
+    position: static;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding: 0.9rem 0.75rem 0.7rem;
+  }
+
+  .site-brand {
+    gap: 0.2rem;
+
+    a {
+      font-size: 1.05rem;
+    }
+
+    small {
+      font-size: 0.9rem;
+    }
+  }
+
+  .site-nav {
+    width: auto;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem 0.55rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      box-shadow: none;
+    }
+  }
+
+  #content-wrapper {
+    padding-top: 1.35rem;
+  }
+
+  .layout-homepage .site-header {
+    flex: 0 0 auto;
+  }
+
+  .layout-homepage #backdrop {
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+  }
+
+  #backdrop {
+    #contents {
+      top: 0;
+    }
+
+    #overlay {
+      padding: 2rem 1rem 1.75rem;
+    }
+  }
+
+  .layout-homepage #backdrop #overlay {
+    min-height: 100%;
+    padding: 1.25rem 1rem 1.25rem;
+  }
+
+  .layout-homepage #backdrop #overlay img {
+    width: min(280px, 72vw, calc(100dvh - 10rem));
+    max-width: 100%;
   }
 }
 
 @media only screen and (max-width: 430px) {
+  .site-header {
+    padding-top: 0.8rem;
+  }
+
   .site-nav {
-    gap: 0.45rem 0.85rem;
+    gap: 0.35rem 0.45rem;
+
+    a {
+      padding: 0.42rem 0.65rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  #content-wrapper {
+    font-size: 1.125rem;
   }
 
   #backdrop #overlay img {
