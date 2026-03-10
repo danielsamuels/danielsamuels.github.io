@@ -1,5 +1,5 @@
 ---
-title: "AI F1 Predictions: Race 1 Results"
+title: "AI-Powered F1 Predictions: Race 1 Results"
 ---
 Race 1 of the 2026 Formula 1 season is over, with George Russell taking the win and Mercedes getting the 1-2 finish.
 
