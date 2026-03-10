@@ -1,9 +1,9 @@
 ---
 title: "AI-Powered F1 Predictions: Race 2 (China)"
 ---
-Following the conclusion of [Race 1]([[2026-03-08-race-1-results]]) in Australia, the F1 drivers hastily left the country (to avoid paying extra tax) and made their way north to China for Race 2 in Shanghai. And so the predictions tournament also moves on to China, with a fresh set of drivers for us to predict the finishing positions of. This only applies to the feature race - not the sprint.
+Following the conclusion of [Race 1]([[2026-03-08-race-1-results]]) in Australia, the F1 drivers hastily left the country (to avoid paying extra tax) and headed north to China for Race 2 in Shanghai. And so the predictions tournament also moves on to China, with a fresh set of drivers for us to predict the finishing positions of. This applies only to the feature race, not the sprint.
 
-This time around we're predicting where we believe Hamilton, Hadjar, Alonso, and Sainz will finish. As I mentioned in the previous post, GPT-5.4 is now available via GitHub CoPilot, so that features in our series this week.
+This time around, we're predicting where we believe Hamilton, Hadjar, Alonso, and Sainz will finish. As I mentioned in the previous post, GPT-5.4 is now available via GitHub CoPilot, so that features in our series this week.
 
 |                           | Hamilton | Hadjar | Alonso | Sainz | Most places gained |
 | ------------------------- | -------- | ------ | ------ | ----- | ------------------ |
@@ -11,11 +11,11 @@ This time around we're predicting where we believe Hamilton, Hadjar, Alonso, and
 | Anthropic Claude Opus 4.6 | 4        | 6      | 16     | 13    | Verstappen         |
 | OpenAI GPT-5.4 (xhigh)    | 5        | 7      | 20     | 16    | Verstappen         |
 
-Once again, the predictions are reasonably well clustered, with the most variance seen in the Sainz picks. As a team struggling with an overweight car, it makes sense that Williams man has a little more uncertainty surrounding him. Hadjar's first outing in Red Bull's second seat started well - qualifying in 3rd place, but was cut short by a catastrophic engine failure. If he can replicate his performance this time around, he could do very well indeed.
+Once again, the predictions are reasonably well clustered, with the most variance seen in the Sainz picks. As a team struggling with an overweight car, it makes sense that the Williams man has a little more uncertainty surrounding him. Hadjar's first outing in Red Bull's second seat started well - qualifying in 3rd place, but was cut short by a catastrophic engine failure. If he can replicate his performance this time around, he could do very well indeed.
 
-Gemini had an interesting take on the most overtakes, stepping away from the common Verstappen prediction that we've seen so far. It believed that Ocon has a "statistically anomalous" record at Shanghai, and possesses the best historical performance metric for race-day progression here. It prefers Ocon's chances over someone like Norris, as it's likely that Norris has limited upwards movement available due to superior qualifying position. 
+Gemini had an interesting take on the most overtakes, stepping away from the common Verstappen prediction that we've seen so far. It believed that Ocon has a "statistically anomalous" record at Shanghai, and possesses the best historical performance metric for race-day progression here. It prefers Ocon's chances over someone like Norris, as it's likely that Norris has limited upwards movement available due to a superior qualifying position. 
 
-Opus and GPT both looked at Verstappen's 14 positions gained in Australia and assumed he'll perform similarly this time out - with something going wrong in qualifying and him needing to make up places.
+Opus and GPT both looked at Verstappen's 14 positions gained in Australia and assumed he'll perform similarly this time out, with something going wrong in qualifying and him needing to make up places.
 
 ## Gemini's betting picks
 
