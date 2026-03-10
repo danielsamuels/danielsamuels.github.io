@@ -1,7 +1,7 @@
 ---
 title: "AI-Powered F1 Predictions: Race 2 (China)"
 ---
-Following the conclusion of [Race 1]([[2026-03-08-race-1-results]]) in Australia, the F1 drivers hastily left the country (to avoid paying extra tax) and headed north to China for Race 2 in Shanghai. And so the predictions tournament also moves on to China, with a fresh set of drivers for us to predict the finishing positions of. This applies only to the feature race, not the sprint.
+Following the conclusion of [Race 1]({% post_url 2026-03-08-race-1-results %}) in Australia, the F1 drivers hastily left the country (to avoid paying extra tax) and headed north to China for Race 2 in Shanghai. And so the predictions tournament also moves on to China, with a fresh set of drivers for us to predict the finishing positions of. This applies only to the feature race, not the sprint.
 
 This time around, we're predicting where we believe Hamilton, Hadjar, Alonso, and Sainz will finish. As I mentioned in the previous post, GPT-5.4 is now available via GitHub CoPilot, so that features in our series this week.
 
