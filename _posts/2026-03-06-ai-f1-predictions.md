@@ -32,11 +32,11 @@ Each model will be given the same prompt, in the format of:
 
 So, let's get started - who are the drivers, and what are the predictions for Australia?
 
-|                           | Lindblad | Piastri | Perez | Bottas | Most overtakes |
-| ------------------------- | -------- | ------- | ----- | ------ | -------------- |
-| Google Gemini 3.1 Pro     | 13       | 4       | 17    | 18     | Verstappen     |
-| Anthropic Claude Opus 4.6 | 12       | 3       | 18    | 20     | Verstappen     |
-| OpenAI GPT-5.3-Codex      | 11       | 4       | 14    | 17     | Perez          |
+|                           | Lindblad | Piastri | Perez | Bottas | Most places gained |
+| ------------------------- | -------- | ------- | ----- | ------ | ------------------ |
+| Google Gemini 3.1 Pro     | 13       | 4       | 17    | 18     | Verstappen         |
+| Anthropic Claude Opus 4.6 | 12       | 3       | 18    | 20     | Verstappen         |
+| OpenAI GPT-5.3-Codex      | 11       | 4       | 14    | 17     | Perez              |
 
 In general, they're fairly closely positioned - though clearly GPT-5.3 believes Cadillac will fare slightly better compared to the other models. No-one had the home favourite as a winner, with Gemini saying "data from the Bahrain tests indicates that the reigning Constructors' Champions do not possess the overwhelming pace advantage they enjoyed twelve months prior" - something that's still to be seen (Piastri was 2 tenths ahead at the end of FP2 this morning).
 

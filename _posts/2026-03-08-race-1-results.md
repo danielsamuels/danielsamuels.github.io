@@ -11,11 +11,11 @@ The scores are given as the difference between the prediction and the actual res
 
 To recap, this is what each of the three models went for:
 
-|                           | Lindblad | Piastri | Perez | Bottas | Most overtakes |
-| ------------------------- | -------- | ------- | ----- | ------ | -------------- |
-| Google Gemini 3.1 Pro     | 13       | 4       | 17    | 18     | Verstappen     |
-| Anthropic Claude Opus 4.6 | 12       | 3       | 18    | 20     | Verstappen     |
-| OpenAI GPT-5.3-Codex      | 11       | 4       | 14    | 17     | Perez          |
+|                           | Lindblad | Piastri | Perez | Bottas | Most places gained |
+| ------------------------- | -------- | ------- | ----- | ------ | ------------------ |
+| Google Gemini 3.1 Pro     | 13       | 4       | 17    | 18     | Verstappen         |
+| Anthropic Claude Opus 4.6 | 12       | 3       | 18    | 20     | Verstappen         |
+| OpenAI GPT-5.3-Codex      | 11       | 4       | 14    | 17     | Perez              |
 
 The actual results were as follows:
 
