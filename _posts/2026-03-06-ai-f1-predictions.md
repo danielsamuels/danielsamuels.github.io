@@ -1,5 +1,5 @@
 ---
-title: "AI-Powered F1 Predictions"
+title: "AI-Powered F1 Predictions: Introduction"
 ---
 I love the new generative AI stuff.  I love Claude, I love [GitHub CoPilot CLI](https://github.com/features/copilot/cli), and I also secretly also love OpenClaw. No wait - come back!
 
