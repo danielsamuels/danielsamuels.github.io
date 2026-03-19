@@ -3,7 +3,7 @@ title: "AI-Powered F1 Predictions: Race 2 Results"
 ---
 Race 2 is done, and the young Kimi Antonelli has his first win in F1 - the youngest ever to do it. With the car he's got underneath him this season, it really was just a matter of time. The number of burnouts on his final lap was quite something - lucky he didn't bin it!
 
-How did our models do this week? To make it a bit more interesting, I've also included the predictions our team made, to see how we stack up.
+How did our models do this week? To make it a bit more interesting, I've also included the predictions our team made to see how we stack up.
 
 |                           | Hamilton | Hadjar | Alonso  | Sainz   | Most places gained | Score |
 | ------------------------- | -------- | ------ | ------- | ------- | ------------------ | ----- |
@@ -36,8 +36,8 @@ This week, Gemini's got another £20 to play with. What did it do with it?
 Potential returns: £67.50 + £5.50 = £73
 Actual returns: £5.50
 
-The "anchor bet" did indeed the expected 50p, but it wasn't quite enough to offset the £15 lost by betting on Alonso going out first. While he did fail to finish, he was the 6th person to retire - with the McLaren boys sadly not even making it to the grid.
+The "anchor bet" did indeed return the expected 50p, but it wasn't quite enough to offset the £15 lost by betting on Alonso going out first. While he did fail to finish, he was the 6th person to retire, with the McLaren boys sadly not even making it to the grid.
 
-Overall, Gemini has placed £40 of race bets and returned £33.57, so is £6.43 in the red.
+Overall, Gemini has placed £40 in race bets and returned £33.57, leaving it £6.43 in the red.
 
 Next up: Japan. I’ll ask the models the same questions, and we’ll see how they get on.
