@@ -22,6 +22,7 @@ That means that after week 2, the scoreboard looks like this:
 | Australia | 21            | 22          | 24         | 21     |
 | China     | 15            | 8           | 13         | 11     |
 | **Total** | 36            | 30          | 37         | 32     |
+
 Its impressive result this week gives Opus the overall lead, with the squishy humans coming in 2nd. 
 
 ## Gemini's betting picks
